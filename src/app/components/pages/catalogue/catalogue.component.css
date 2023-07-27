@@ -1,0 +1,45 @@
+.bar{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.btn{
+  margin-top: 1pc;
+  margin-left: 3pc;
+  width: 6.75rem;
+  height: 2.15rem;
+  flex-shrink: 0;
+  border-radius: 2rem;
+
+}
+.btn:hover{
+  background-color: #AB094D;
+  color: white;
+}
+.card{
+  width: 29.3125rem;
+  height: 13.25rem;
+  flex-shrink: 0;
+  margin: 1rem;
+  position: relative;
+  border-radius: 1.875rem;
+  border: 1px solid #C9C9C9;
+  background: #FFF;
+  display: inline-block;
+}
+.add{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 4rem;
+  border-style: none;
+  background-color: #AB094D;
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+}

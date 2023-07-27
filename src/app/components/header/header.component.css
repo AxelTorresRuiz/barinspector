@@ -1,0 +1,42 @@
+#navbar {
+  align-items: center;
+  background-color: #ffffff;
+  width: 80%;
+  position: fixed;
+  left: 20%;
+  overflow: hidden;
+}
+
+#inicio {
+  font-size: 3rem;
+  background-color: #fbfbfb;
+  height: 6rem;
+}
+
+
+#text{
+  margin-left: 4rem;
+}
+
+#botones {
+  background-color: #4B4540;
+  height: 3rem;
+}
+
+.boton {
+  width: 5rem;
+  height: 1.9375rem;
+  margin-top: 1pc;
+  margin-left: 5pc;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.375rem 0.375rem 0rem 0rem;;
+  color: #ffffff;
+  font-size: 16px;
+
+}
+
+.boton:focus {
+  background-color: #ffffff;
+  color: #000000;
+}
