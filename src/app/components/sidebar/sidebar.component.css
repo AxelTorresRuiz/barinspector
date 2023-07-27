@@ -43,7 +43,7 @@
   color: #FFFFFF;
   position: relative;
   text-align: center;
-  top: 2rem;
+  top: 9rem;
   line-height: normal;
 }
 .img{
@@ -51,7 +51,7 @@
   height: 8.75rem;
   flex-shrink: 0;
   position: relative;
-  left: 5%;
-  top: 25%;
+  left: 3rem;
+  top: 9rem;
   flex: content;
 }

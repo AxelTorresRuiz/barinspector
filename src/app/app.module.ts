@@ -15,6 +15,7 @@ import { CatalogueComponent } from './components/pages/catalogue/catalogue.compo
 //Rutas
 import { APP_ROUTING } from './app.routes';
 import { ConfigurationComponent } from './components/pages/configuration/configuration.component';
+import { PagetitleService } from './services/pagetitle.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { ConfigurationComponent } from './components/pages/configuration/configu
     RouterModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    PagetitleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

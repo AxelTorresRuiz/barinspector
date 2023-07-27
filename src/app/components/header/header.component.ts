@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PagetitleService } from 'src/app/services/pagetitle.service';
 
 @Component({
   selector: 'app-header',
@@ -8,29 +9,28 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  title : string = 'Inicio';
 
-  constructor(private router: Router) { }
+
+  constructor(private router: Router, private pageTitleService:PagetitleService) { }
+
+  getPageTitle():string{
+    return this,this.pageTitleService.getPageTitle();
+  }
 
   myBar(){
     this.router.navigate(['/mybar'])
-    this.title = "Mi Barra"
   }
   audit(){
     this.router.navigate(['/audit'])
-    this.title = "Auditoria"
   }
   reports(){
     this.router.navigate(['/reports'])
-    this.title = "Reportes"
   }
   managers(){
     this.router.navigate(['/managers'])
-    this.title = "Encargados"
   }
   configuration(){
     this.router.navigate(['/configuration'])
-    this.title = "Configuracion"
   }
 }
 

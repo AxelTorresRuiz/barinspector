@@ -29,6 +29,12 @@
   border: 1px solid #C9C9C9;
   background: #FFF;
   display: inline-block;
+  overflow: hidden;
+}
+.card-body{
+  display: inline-block;
+  position: relative;
+  text-align: center;
 }
 .add{
   width: 5rem;
@@ -42,4 +48,41 @@
   position: absolute;
   right: 0.5rem;
   bottom: 0.5rem;
+}
+.botellatxt{
+  width: 20.1875rem;
+  height: 3.875rem;
+  flex-shrink: 0;
+  color: #000;
+  font-family: Inter;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: relative;
+  margin: 0;
+  left: 0rem;
+  padding: 0;
+
+
+}
+
+.btnml{
+  width: 5.3125rem;
+  height: 1.9375rem;
+  flex-shrink: 0;
+  border-radius: 1.875rem;
+  border: 1px solid #000;
+  background: rgba(217, 217, 217, 0.00);
+  position: relative;
+  margin: 1rem;
+}
+
+.img{
+  width: 3.375rem;
+  height: 12.3125rem;
+  flex-shrink: 0;
+  position:relative;
+  left: 7rem;
+  bottom: 4.5rem;
 }
