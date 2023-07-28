@@ -9,6 +9,8 @@ export class CatalogueComponent {
 
   constructor(private pageTitleService:PagetitleService){}
 
+
+
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Catálogo')
   }

@@ -43,3 +43,10 @@
   right: 0.5rem;
   bottom: 0.5rem;
 }
+.modal{
+  display: none;
+  position: fixed;
+  width: 52.875rem;
+  height: 42.75rem;
+  flex-shrink: 0;
+}

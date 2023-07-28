@@ -76,10 +76,11 @@
   background: rgba(217, 217, 217, 0.00);
   position: relative;
   margin: 1rem;
+  left: 2rem;
 }
 
 .img{
-  width: 3.375rem;
+  width: 6.375rem;
   height: 12.3125rem;
   flex-shrink: 0;
   position:relative;

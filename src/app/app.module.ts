@@ -16,6 +16,7 @@ import { CatalogueComponent } from './components/pages/catalogue/catalogue.compo
 import { APP_ROUTING } from './app.routes';
 import { ConfigurationComponent } from './components/pages/configuration/configuration.component';
 import { PagetitleService } from './services/pagetitle.service';
+import { CatalogueModalComponent } from './components/modals/catalogue-modal/catalogue-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PagetitleService } from './services/pagetitle.service';
     ManagersComponent,
     ReportComponent,
     CatalogueComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
+    CatalogueModalComponent
   ],
   imports: [
     BrowserModule,
