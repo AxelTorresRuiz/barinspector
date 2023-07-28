@@ -8,8 +8,9 @@
   <button type="button" class="btn btn-outline-dark">Coñac</button>
   <button type="button" class="btn btn-outline-dark">Otros</button>
 
-
-  <div class="card">
+  <button (click)="abrirModal()">Abrir</button>
+  <app-catalogue-modal *ngIf="mostrarModal"></app-catalogue-modal>
+  <div class="card" click>
     <div class="card-body">
 
     </div>

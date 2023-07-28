@@ -6,8 +6,9 @@ import { ReportComponent } from './components/pages/report/report.component';
 import { ManagersComponent } from './components/pages/managers/managers.component';
 import { ConfigurationComponent } from './components/pages/configuration/configuration.component';
 import { CatalogueComponent } from './components/pages/catalogue/catalogue.component';
-
+import { CatalogueModalComponent } from './components/modals/catalogue-modal/catalogue-modal.component';
 const APP_ROUTES: Routes = [
+  {path:'catalogue/add',component:CatalogueModalComponent},
   {path:'catalogue',component:CatalogueComponent},
   {path:'configuration',component:ConfigurationComponent},
   {path:'managers',component:ManagersComponent},

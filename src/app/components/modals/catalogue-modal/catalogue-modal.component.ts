@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./catalogue-modal.component.css']
 })
 export class CatalogueModalComponent {
+  mostrarModal = false;
 
+  abrirModal() {
+    this.mostrarModal = true;
+  }
+
+  cerrarModal() {
+    this.mostrarModal = false;
+  }
 }
