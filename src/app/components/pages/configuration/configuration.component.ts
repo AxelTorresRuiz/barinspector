@@ -9,6 +9,12 @@ export class ConfigurationComponent implements OnInit {
 
   constructor(private pageTitleService:PagetitleService){}
 
+  inputDisabled:boolean = false;
+
+  toggleInput(){
+    this.inputDisabled= !this.inputDisabled;
+  }
+
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Configuración')
   }

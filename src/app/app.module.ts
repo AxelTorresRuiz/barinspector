@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from '@angular/router'
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -17,6 +18,10 @@ import { APP_ROUTING } from './app.routes';
 import { ConfigurationComponent } from './components/pages/configuration/configuration.component';
 import { PagetitleService } from './services/pagetitle.service';
 import { CatalogueModalComponent } from './components/modals/catalogue-modal/catalogue-modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SerialDataService } from './services/serial-data.service';
+import { SerialComponent } from './components/serial/serial.component';
+
 
 @NgModule({
   declarations: [
@@ -29,15 +34,20 @@ import { CatalogueModalComponent } from './components/modals/catalogue-modal/cat
     ReportComponent,
     CatalogueComponent,
     ConfigurationComponent,
-    CatalogueModalComponent
+    CatalogueModalComponent,
+    SerialComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
-    APP_ROUTING
+    APP_ROUTING,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    FormsModule,
   ],
   providers: [
-    PagetitleService
+    PagetitleService,
+    SerialDataService
   ],
   bootstrap: [AppComponent]
 })

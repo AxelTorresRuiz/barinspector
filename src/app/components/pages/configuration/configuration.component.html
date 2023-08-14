@@ -1,1 +1,51 @@
-<p>configuration works!</p>
+<div class="principal">
+
+    <div class="left">
+        <p>Barras Activas</p>
+        <div class="barras">
+            <div class="divname">
+                <p class="barname">Mi barra</p>
+            </div>
+            <div class="divcheck">
+                <input class="checkbox" type="checkbox">
+            </div>
+        </div>
+
+        <div class="barras">
+            <div class="divname">
+                <p class="barname">Segunda barra</p>
+            </div>
+            <div class="divcheck">
+                <input class="checkbox" type="checkbox">
+            </div>
+        </div>
+
+        <div class="barras">
+            <div class="divname">
+                <p class="barname">Barra Alberca</p>
+            </div>
+            <div class="divcheck">
+                <input class="checkbox" type="checkbox">
+            </div>
+        </div>
+
+        <button class="newbar">Nueva Barra</button>
+    </div>
+
+    <div class="right">
+        <p>Catalogo Botellas</p>
+        <button class="boton">Ver Catalogo</button>
+        <button class="boton"> Añadir</button>
+        <br>
+        <br>
+        <br>
+        <p class="txtlogo">Logo de la empresa</p>
+        
+        <div class="rectangulo">
+            <input class="inputlogo" type="text" [disabled]="inputDisabled">
+            <button (click)="toggleInput()" class="btnlogo">+</button>
+        </div>
+        <button class="save">Guardar</button>
+    </div>
+
+</div>

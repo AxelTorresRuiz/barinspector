@@ -8,11 +8,13 @@
   <button type="button" class="btn btn-outline-dark">Coñac</button>
   <button type="button" class="btn btn-outline-dark">Otros</button>
 
-  <button (click)="abrirModal()">Abrir</button>
-  <app-catalogue-modal *ngIf="mostrarModal"></app-catalogue-modal>
-  <div class="card" click>
-    <div class="card-body">
 
+  <div class="card" (click)="openModal()">
+    <div class="card-body">
+      <p class="botellatxt">Tequila Jose Cuervo Tradicional Reposado</p>
+      <button class="btnml">695ml</button>
+      <button class="btnml">950ml</button>
+      <img class="img" src="../../../../assets/botella.png" alt="botellon">
     </div>
   </div>
 

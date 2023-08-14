@@ -1,7 +1,26 @@
-<!-- mi-modal.component.html -->
-<div class="modal">
-  <div class="modal-contenido">
-    <span class="cerrar-modal" (click)="cerrarModal()">&times;</span>
-    <p>Aquí va el contenido del modal...</p>
+<div class="principal">
+  <div class="header">
+    Agregar
+    <p class="close-modal" (click)="closeModal()">X</p>
+  </div>
+  <div class="body">
+
+    <div class="left">
+      <p class="text">Tequila Jose cuervo <br> tradicional plata</p>
+      <img class="img" src="../../../../assets/botella.png" alt="botellon.png">
+    </div>
+
+    <div class="right">
+      <p class="text">Selecciona el tamaño</p>
+      <button (click)="toggleButton('button1')" [ngClass]="{'active': button1Active}" class="custom-button" >695ml</button>
+      <button (click)="toggleButton('button2')" [ngClass]="{'active': button2Active}" class="custom-button" >960ml</button>
+      <p class="peso">Peso</p>
+      <input type="text" class="inputtext">
+      <p>Datos del puerto serial: {{ datosSerial }}</p>
+      <button class="btnmodal">Botella Nueva</button>
+      <button class="btnmodal">Agregar</button>
+
+    </div>
+
   </div>
 </div>

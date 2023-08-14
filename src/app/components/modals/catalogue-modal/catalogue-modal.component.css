@@ -1,5 +1,116 @@
-.modal{
+.principal{
   width: 52.875rem;
   height: 42.75rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.header{
+  width: 52.875rem;
+  height: 5.4375rem;
+  flex-shrink: 0;
+  background-color: #4B4540;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 2.5rem;
+  font-style: normal;
+  line-height: normal;   
+}
+.body{
+  display: flex;
+  width: 52.875rem;
+  height: 37.3125rem;
+  background-color: #FFF;
+}
+.left{
+  flex: 1;
+  text-align: center;
+}
+
+.right{
+  flex: 1;
+  text-align: center;
+}
+
+.text{
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;  
+}
+
+.custom-button{
+  text-align: center;
+  background-color: #FFF;
+  color: #000;
+  border-radius: 1.875rem;
+  border: 1px solid #000;
+  width: 5.3125rem;
+  height: 1.9375rem;
+  margin: 2rem;
+}
+.custom-button.active {
+  background-color: #AB094D;
+  color: white;
+}
+
+.peso{
+  color: #000;
+  text-align: center;
+  font-family: Homenaje;
+  font-size: 5.3125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.inputtext{
+  
+  width: 23.4375rem;
+  height: 8.625rem;
+  flex-shrink: 0;
+  color: #000;
+  text-align: center;
+  font-family: Homenaje;
+  font-size: 5.3125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.close-modal{
+  position: absolute;
+  top: 0rem;
+  right: .5rem;
+  cursor: pointer;
+}
+
+.btnmodal{
+  width: 11.0625rem;
+  height: 4rem;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+  background: #AB094D;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;  
+  margin: 1rem;
+  margin-top: 3rem;
+}
+
+.img{
+  width: 13.3125rem;
+  height: 26.0625rem;
   flex-shrink: 0;
 }

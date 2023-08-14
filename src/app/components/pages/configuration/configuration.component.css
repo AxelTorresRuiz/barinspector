@@ -1,0 +1,158 @@
+.principal{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.left{
+    flex: 1;
+    text-align: center;
+    color: #4A4844;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    overflow: hidden;
+}
+
+.right{
+    flex: 1;
+    text-align: center;
+    color: #4A4844;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    overflow: hidden;
+}
+
+.barras{
+    margin-left: 10rem;
+    margin-top: 1rem;
+    display: flex;
+    width: 26.25rem;
+    height: 3.4375rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    border: 2px solid #E5E5E5;
+    background: #FFF;
+}
+
+.divname{
+    flex: 1;
+    text-align: left;
+}
+
+.divcheck{
+    flex: 1;
+    text-align: right;
+}
+
+.barname{
+    margin: .5rem;
+}
+
+.checkbox{
+    width: 2.125rem;
+    height: 2.125rem;
+    flex-shrink: 0;
+    margin: .5rem;
+}
+
+.newbar{
+    width: 13.0625rem;
+    height: 4rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    background: #AB094D;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position:absolute;
+    bottom: 3rem;
+    left: 15rem;
+}
+
+.boton{
+    width: 13.0625rem;
+    height: 4rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    background: #AB094D;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 2rem;
+}
+
+.rectangulo{
+    width: 26.1645rem;
+    height: 3.4375rem;
+    flex-shrink: 0;
+    border-radius: 0.25rem;
+    border: 2px solid #E5E5E5;
+    background: #FFF;
+    display: flex;
+    overflow: hidden;
+    margin-left: 10rem;
+    
+}
+
+.txtlogo{
+    width: 17.62113rem;
+    height: 1.90606rem;
+    flex-shrink: 0;
+    margin-left: 7rem;
+}
+
+.inputlogo{
+    flex: 1;
+    width: 16.2495rem;
+    height: 1.931rem;
+    flex-shrink: 0;
+    border: none;
+    margin-top: .5rem;
+    
+}
+
+.btnlogo{
+    width: 5rem;
+    height: 3.3125rem;
+    flex-shrink: 0;
+    border-radius: 0rem 0rem 0.125rem 0rem;
+    border: 1px solid #E5E5E5;
+    background: #E5E5E5;
+    color: #FFF;
+    font-family: Manrope;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.save{
+    width: 13.0625rem;
+    height: 4rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    background: #AB094D;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    top: 13rem;
+}
