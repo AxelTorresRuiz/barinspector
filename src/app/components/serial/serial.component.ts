@@ -13,7 +13,7 @@ export class SerialComponent implements OnInit {
   }
 
   obtenerDatosSerial(){
-    this.http.get<string>('http://localhost:3000/datos-serial').subscribe(data=>{
+    this.http.get<string>('http://localhost:5000/datos-serial').subscribe(data=>{
       this.serialDataService.setDatosSerial(data);
     });
   }

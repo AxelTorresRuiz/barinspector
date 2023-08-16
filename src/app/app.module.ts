@@ -21,6 +21,8 @@ import { CatalogueModalComponent } from './components/modals/catalogue-modal/cat
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SerialDataService } from './services/serial-data.service';
 import { SerialComponent } from './components/serial/serial.component';
+import { NewbarModalComponent } from './components/modals/newbar-modal/newbar-modal.component';
+import { AddbottleComponent } from './components/pages/addbottle/addbottle.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { SerialComponent } from './components/serial/serial.component';
     CatalogueComponent,
     ConfigurationComponent,
     CatalogueModalComponent,
-    SerialComponent
+    SerialComponent,
+    NewbarModalComponent,
+    AddbottleComponent
   ],
   imports: [
     BrowserModule,

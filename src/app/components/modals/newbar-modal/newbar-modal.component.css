@@ -1,0 +1,80 @@
+.principal{
+    width: 52.875rem;
+    height: 42.75rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  
+  .header{
+    width: 52.875rem;
+    height: 5.4375rem;
+    flex-shrink: 0;
+    background-color: #4B4540;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 2.5rem;
+    font-style: normal;
+    line-height: normal;   
+  }
+  .body{
+    display: flex;
+    flex-direction: column;
+    width: 52.875rem;
+    height: 37.3125rem;
+    background-color: #FFF;
+  }
+  .body1{
+    flex: 1;
+  }
+  .body2{
+    text-align: center;
+    flex: 1;
+  }
+  .body3{
+    text-align: center;
+    flex: 1;
+  }
+
+  .close-modal{
+    position: absolute;
+    top: 0rem;
+    right: .5rem;
+    cursor: pointer;
+  }
+  .name{
+    color: #4A4844;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    top: 10rem;
+    padding-left: 9rem;
+  }
+  .barname{
+    width: 34.375rem;
+    height: 3.4375rem;
+    flex-shrink: 0;
+    border-radius: 0.25rem;
+    border: 2px solid #E5E5E5;
+    background: #FFF;
+  }
+  .newbar{
+    width: 13.0625rem;
+    height: 4rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    background: #AB094D;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
