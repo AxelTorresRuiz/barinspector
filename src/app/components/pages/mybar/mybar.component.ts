@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PagetitleService } from 'src/app/services/pagetitle.service';
+import { BottleserviceService } from 'src/app/services/api/bottleservice.service';
 @Component({
   selector: 'app-mybar',
   templateUrl: './mybar.component.html',
@@ -8,8 +9,7 @@ import { PagetitleService } from 'src/app/services/pagetitle.service';
 })
 export class MybarComponent implements OnInit {
 
-  constructor(private pageTitleService:PagetitleService, private router:Router ){
-
+  constructor(private pageTitleService:PagetitleService, private router:Router, private bottleService:BottleserviceService ){
   }
 
   agregar(){
@@ -19,5 +19,6 @@ export class MybarComponent implements OnInit {
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Mi barra')
   }
+
 
 }

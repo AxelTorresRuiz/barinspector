@@ -34,4 +34,7 @@ export class ConfigurationComponent implements OnInit {
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Configuración')
   }
+  viewcatalogue(){
+    this.router.navigate(['/catalogue'])
+  }
 }

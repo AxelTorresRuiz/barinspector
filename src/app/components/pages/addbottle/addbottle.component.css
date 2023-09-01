@@ -1,5 +1,68 @@
-.principal{
+.container{
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    padding: 0%;
+    margin-left: 4rem;
 }
+.labels{
+    margin-top: 2rem;
+    color: #4A4844;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.form-control{
+    margin-top: 1rem;
+    width: 23.6875rem;
+    height: 3.4375rem;
+    flex-shrink: 0;
+}
+.inputs{
+    margin-top: 1rem;
+    width: 18.75rem;
+    height: 3.4375rem;
+    flex-shrink: 0;
+    border-radius: 0.25rem;
+    border: 2px solid #E5E5E5;
+    background: #FFF;
+}
+.inputname{
+    margin-top: 1rem;
+    width: 40.10325rem;
+    height: 3.4375rem;
+    flex-shrink: 0;
+    border-radius: 0.25rem;
+    border: 2px solid #E5E5E5;
+    background: #FFF;
+}
+.btn{
+    margin-top: 3rem;
+    margin-left: 3rem;
+    width: 13.0625rem;
+    height: 4rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    background: #AB094D;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 8px; /* Ajusta el margen superior según sea necesario */
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 5px; /* Ajusta la posición horizontal según sea necesario */
+    top: 50%;
+    transform: translateY(-50%);
+}
+

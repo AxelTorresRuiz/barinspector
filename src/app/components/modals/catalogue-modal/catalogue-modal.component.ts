@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { SerialDataService } from 'src/app/services/serial-data.service';
+
 @Component({
   selector: 'app-catalogue-modal',
   templateUrl: './catalogue-modal.component.html',
@@ -8,7 +8,7 @@ import { SerialDataService } from 'src/app/services/serial-data.service';
 })
 export class CatalogueModalComponent {
 
-  constructor(private dialogRef: MatDialogRef<CatalogueModalComponent>, private serialDataService:SerialDataService){}
+  constructor(private dialogRef: MatDialogRef<CatalogueModalComponent>){}
 
   button1Active: boolean = false;
   button2Active: boolean = false;
@@ -21,9 +21,7 @@ export class CatalogueModalComponent {
     }
   }
 
-  get datosSerial():string{
-    return this.serialDataService.getDatosSerial();
-  }
+
 
   closeModal(){
     this.dialogRef.close()

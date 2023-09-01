@@ -17,10 +17,10 @@ import { CatalogueComponent } from './components/pages/catalogue/catalogue.compo
 import { APP_ROUTING } from './app.routes';
 import { ConfigurationComponent } from './components/pages/configuration/configuration.component';
 import { PagetitleService } from './services/pagetitle.service';
+import { BottleserviceService } from './services/api/bottleservice.service';
+import { CatalogueService } from './services/api/catalogue.service';
 import { CatalogueModalComponent } from './components/modals/catalogue-modal/catalogue-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SerialDataService } from './services/serial-data.service';
-import { SerialComponent } from './components/serial/serial.component';
 import { NewbarModalComponent } from './components/modals/newbar-modal/newbar-modal.component';
 import { AddbottleComponent } from './components/pages/addbottle/addbottle.component';
 
@@ -37,7 +37,6 @@ import { AddbottleComponent } from './components/pages/addbottle/addbottle.compo
     CatalogueComponent,
     ConfigurationComponent,
     CatalogueModalComponent,
-    SerialComponent,
     NewbarModalComponent,
     AddbottleComponent
   ],
@@ -51,7 +50,9 @@ import { AddbottleComponent } from './components/pages/addbottle/addbottle.compo
   ],
   providers: [
     PagetitleService,
-    SerialDataService
+    BottleserviceService,
+    CatalogueService
+    
   ],
   bootstrap: [AppComponent]
 })

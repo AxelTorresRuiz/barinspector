@@ -9,43 +9,15 @@
   <button type="button" class="btn btn-outline-dark">Otros</button>
 
 
-  <div class="card" (click)="openModal()">
+  <div class="card" *ngFor="let bottle of bottles" (click)="openModal()">
     <div class="card-body">
-      <p class="botellatxt">Tequila Jose Cuervo Tradicional Reposado</p>
+      <p class="botellatxt">{{bottle.Liquor}}</p>
       <button class="btnml">695ml</button>
       <button class="btnml">950ml</button>
       <img class="img" src="../../../../assets/botella.png" alt="botellon">
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-body">
-
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
-
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
-
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
-
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
-
-    </div>
-  </div>
+  
 
 </div>
