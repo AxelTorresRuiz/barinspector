@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PagetitleService } from 'src/app/services/pagetitle.service';
 import {MatDialog} from '@angular/material/dialog'
 import { CatalogueModalComponent } from '../../modals/catalogue-modal/catalogue-modal.component';
+
 @Component({
   selector: 'app-catalogue',
   templateUrl: './catalogue.component.html',
@@ -26,7 +27,7 @@ export class CatalogueComponent {
   }
 
   ngOnInit(): void {
-    this.pageTitleService.setPageTitle('Catálogo')
+    this.pageTitleService.setPageTitle('Catálogo');
   }
 
 
