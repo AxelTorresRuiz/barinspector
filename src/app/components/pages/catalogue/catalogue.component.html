@@ -11,10 +11,15 @@
 
   <div class="card" *ngFor="let bottle of bottles" (click)="openModal()">
     <div class="card-body">
-      <p class="botellatxt">{{bottle.Liquor}}</p>
-      <button class="btnml">695ml</button>
-      <button class="btnml">950ml</button>
-      <img class="img" src="../../../../assets/botella.png" alt="botellon">
+      <div class="row">
+        <div class="col-md-7">
+          <p class="botellatxt">{{bottle.Liquor}}</p>
+          <button class="btnml">{{bottle.Presentacion}}</button>
+        </div>
+        <div class="col-md-5">
+          <img class="img" src="{{bottle.Image}}" alt="botellon">
+        </div>
+      </div>
     </div>
   </div>
 

@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-
+import { BasculaService } from 'src/app/services/bascula.service';
 @Component({
   selector: 'app-catalogue-modal',
   templateUrl: './catalogue-modal.component.html',
   styleUrls: ['./catalogue-modal.component.css']
 })
-export class CatalogueModalComponent {
-
-  constructor(private dialogRef: MatDialogRef<CatalogueModalComponent>){}
+export class CatalogueModalComponent implements OnInit {
+   heightValue!: number;
+  constructor(private bascula:BasculaService,private dialogRef: MatDialogRef<CatalogueModalComponent>){}
 
   button1Active: boolean = false;
   button2Active: boolean = false;
@@ -21,6 +21,13 @@ export class CatalogueModalComponent {
     }
   }
 
+  ngOnInit(){
+    this.bascula.startConnection();
+
+    this.bascula.getWeightObservable().subscribe(weight=>{
+      this.heightValue = weight;
+    })
+  }
 
 
   closeModal(){

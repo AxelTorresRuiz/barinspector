@@ -14,8 +14,8 @@
       <p class="text">Selecciona el tamaño</p>
       <button (click)="toggleButton('button1')" [ngClass]="{'active': button1Active}" class="custom-button" >695ml</button>
       <button (click)="toggleButton('button2')" [ngClass]="{'active': button2Active}" class="custom-button" >960ml</button>
-      <p class="peso">Peso</p>
-      <input type="text" class="inputtext">
+      <label class="peso" for="weightInput">Peso:</label>
+      <input class="inputtext" type="text" id="weightInput" [(ngModel)]="heightValue">
       <button class="btnmodal">Botella Nueva</button>
       <button class="btnmodal">Agregar</button>
 

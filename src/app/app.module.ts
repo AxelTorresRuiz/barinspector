@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from '@angular/router'
+import * as signalR from '@microsoft/signalr';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { ConfigurationComponent } from './components/pages/configuration/configu
 import { PagetitleService } from './services/pagetitle.service';
 import { BottleserviceService } from './services/api/bottleservice.service';
 import { CatalogueService } from './services/api/catalogue.service';
+import { BasculaService } from './services/bascula.service';
 import { CatalogueModalComponent } from './components/modals/catalogue-modal/catalogue-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewbarModalComponent } from './components/modals/newbar-modal/newbar-modal.component';
@@ -51,7 +53,8 @@ import { AddbottleComponent } from './components/pages/addbottle/addbottle.compo
   providers: [
     PagetitleService,
     BottleserviceService,
-    CatalogueService
+    CatalogueService,
+    BasculaService
     
   ],
   bootstrap: [AppComponent]

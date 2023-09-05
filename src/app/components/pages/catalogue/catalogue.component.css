@@ -5,6 +5,8 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
+  overflow-y: auto;
+  
 }
 .btn{
   margin-top: 1pc;
@@ -23,33 +25,25 @@
   width: 29.3125rem;
   height: 13.25rem;
   flex-shrink: 0;
-  margin: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
   position: relative;
   border-radius: 1.875rem;
   border: 1px solid #C9C9C9;
   background: #FFF;
   display: inline-block;
-  text-align: center;
-  overflow: hidden;
+  white-space: normal;
+  word-wrap: break-word; 
+  overflow: hidden; 
+  
 }
-.add{
-  width: 5rem;
-  height: 5rem;
-  border-radius: 4rem;
-  border-style: none;
-  background-color: #AB094D;
-  color: #fff;
-  font-size: 3rem;
-  text-align: center;
-  position: absolute;
-  right: 0.5rem;
-  bottom: 0.5rem;
-}
+
 
 .card-body{
   display: inline-block;
   position: relative;
   text-align: center;
+
 }
 
 .botellatxt{
@@ -63,9 +57,7 @@
   font-weight: 700;
   line-height: normal;
   position: relative;
-  margin: 0;
-  right: 4rem;
-  padding: 0;
+
 }
 
 .btnml{
@@ -76,15 +68,16 @@
   border: 1px solid #000;
   background: rgba(217, 217, 217, 0.00);
   position: relative;
-  margin: 1rem;
-  right: 2rem;
+  margin-top: 4rem;
+  margin-right: .5rem;
 }
 
 .img{
-  width: 6.375rem;
-  height: 12.3125rem;
+  width: 7.375rem;
+  height: 11.3125rem;
   flex-shrink: 0;
   position:relative;
-  left: 5rem;
-  bottom: 4.5rem;
+
+  left: 1.5rem;
+
 }

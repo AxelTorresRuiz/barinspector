@@ -19,12 +19,7 @@ export class CatalogueComponent {
     const dialogRef = this.dialog.open(CatalogueModalComponent,{
       width:'52.875rem', height:'42.75rem',
       disableClose:true,
-
     });
-
-    dialogRef.afterClosed().subscribe(result=>{
-      alert('Modal se cerro')
-    })
 
   }
 

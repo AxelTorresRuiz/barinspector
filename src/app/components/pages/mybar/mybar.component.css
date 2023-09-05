@@ -30,7 +30,9 @@
   border: 1px solid #C9C9C9;
   background: #FFF;
   display: inline-block;
-  overflow: hidden;
+  white-space: normal;
+  word-wrap: break-word; 
+  overflow: hidden; 
 }
 .card-body{
   display: inline-block;
@@ -62,9 +64,7 @@
   font-weight: 700;
   line-height: normal;
   position: relative;
-  margin: 0;
-  left: 0rem;
-  padding: 0;
+
 }
 
 .btnml{
@@ -75,15 +75,15 @@
   border: 1px solid #000;
   background: rgba(217, 217, 217, 0.00);
   position: relative;
-  margin: 1rem;
-  left: 2rem;
+  margin-right: .5rem;
+  margin-top: 2rem;
 }
 
 .img{
   width: 6.375rem;
-  height: 12.3125rem;
+  height: 11.3125rem;
   flex-shrink: 0;
   position:relative;
-  left: 7rem;
-  bottom: 4.5rem;
+
+  left: 1.5rem;
 }
