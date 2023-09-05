@@ -57,7 +57,8 @@
   font-weight: 700;
   line-height: normal;
   position: relative;
-
+  right: 1rem;
+  
 }
 
 .btnml{
@@ -71,13 +72,16 @@
   margin-top: 4rem;
   margin-right: .5rem;
 }
+.btnml:hover{
+  background-color: #AB094D;
+  color: white;
+}
 
 .img{
-  width: 7.375rem;
+  width: 9.375rem;
   height: 11.3125rem;
   flex-shrink: 0;
   position:relative;
-
   left: 1.5rem;
 
 }
