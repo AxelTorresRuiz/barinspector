@@ -28,6 +28,7 @@
     border: 2px solid #E5E5E5;
     background: #FFF;
 }
+
 .inputname{
     margin-top: 1rem;
     width: 40.10325rem;
@@ -66,3 +67,23 @@
     transform: translateY(-50%);
 }
 
+.inputimg{
+    width: 15.16606rem;
+    height: 3.4375rem;
+    flex-shrink: 0;
+    border-radius: 0.25rem;
+    border: 2px solid #E5E5E5;
+    background: #FFF;
+}
+.files{
+    width: 3.58288rem;
+    height: 3.3125rem;
+    flex-shrink: 0;
+    border-radius: 0rem 0rem 0.125rem 0rem;
+    border: 1px solid #E5E5E5;
+    background: #E5E5E5;
+}
+.addfile{
+    display: flex;
+    margin-top: 1rem;
+}
