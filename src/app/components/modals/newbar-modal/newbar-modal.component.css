@@ -6,8 +6,6 @@
     flex-direction: column;
   }
   
-  
-  
   .header{
     width: 52.875rem;
     height: 5.4375rem;
@@ -26,17 +24,7 @@
     width: 52.875rem;
     height: 37.3125rem;
     background-color: #FFF;
-  }
-  .body1{
-    flex: 1;
-  }
-  .body2{
     text-align: center;
-    flex: 1;
-  }
-  .body3{
-    text-align: center;
-    flex: 1;
   }
 
   .close-modal{
@@ -53,8 +41,8 @@
     font-weight: 400;
     line-height: normal;
     position: relative;
-    top: 10rem;
-    padding-left: 9rem;
+
+
   }
   .barname{
     width: 34.375rem;
@@ -77,4 +65,14 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-top: 5rem;
+  }
+  .checkbar{
+    width: 3rem;
+    height: 3.5rem;
+  }
+  .formulario{
+    display: flex;
+    margin-top: 5rem;
+    margin-left: 5rem;
   }

@@ -4,14 +4,13 @@
       <p class="close-modal" (click)="closeModal()">X</p>
     </div>
     <div class="body">
-        <div class="body1">
+        <form (submit)="onSubmit()">
             <p class="name">Nombre</p>
-        </div>    
-        <div class="body2">
-            <input class="barname" type="text">
-        </div>
-        <div class="body3">
-            <button class="newbar">Guardar</button>
-        </div>
+            <div class="formulario">
+                <input class="barname" [(ngModel)]="newBarName" name="barName" placeholder="Nombre de la barra" required>
+                <input class="checkbar" [(ngModel)]="newChecked" name="checked" type="checkbox">
+            </div>
+            <button class="newbar" type="submit">Agregar</button>
+        </form>
     </div>
   </div>
