@@ -15,10 +15,11 @@ export class CatalogueComponent {
   constructor(private pageTitleService:PagetitleService, public dialog: MatDialog, private catalogueService:CatalogueService){}
 
 
-  openModal(){
+  openModal(bottle: any){
     const dialogRef = this.dialog.open(CatalogueModalComponent,{
       width:'52.875rem', height:'42.75rem',
       disableClose:true,
+      data:{botellaSeleccionada:bottle}
     });
 
   }
@@ -27,7 +28,6 @@ export class CatalogueComponent {
     this.pageTitleService.setPageTitle('Catálogo')
 
     this.bottles = this.catalogueService.getBottle();
-    console.log(this.bottles);
     
 
   }

@@ -9,7 +9,7 @@
   <button type="button" class="btn btn-outline-dark">Otros</button>
 
 
-  <div class="card" *ngFor="let bottle of bottles" (click)="openModal()">
+  <div class="card" *ngFor="let bottle of bottles" (click)="openModal(bottle)">
     <div class="card-body">
       <div class="row">
         <div class="col-md-7">
