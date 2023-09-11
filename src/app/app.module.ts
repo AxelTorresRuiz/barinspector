@@ -25,6 +25,7 @@ import { CatalogueModalComponent } from './components/modals/catalogue-modal/cat
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewbarModalComponent } from './components/modals/newbar-modal/newbar-modal.component';
 import { AddbottleComponent } from './components/pages/addbottle/addbottle.component';
+import { AddmanagerComponent } from './components/pages/addmanager/addmanager.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { AddbottleComponent } from './components/pages/addbottle/addbottle.compo
     ConfigurationComponent,
     CatalogueModalComponent,
     NewbarModalComponent,
-    AddbottleComponent
+    AddbottleComponent,
+    AddmanagerComponent
   ],
   imports: [
     BrowserModule,
