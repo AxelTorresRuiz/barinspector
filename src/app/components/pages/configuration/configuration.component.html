@@ -2,26 +2,17 @@
 
     <div class="left">
         <p>Barras Activas</p>
-        <div class="barras">
-            <div class="divname">
-                <p class="barname">Mi barra</p>
-            </div>
-            <div class="divcheck">
-                <input class="checkbox" type="checkbox">
-            </div>
-        </div>
-
-        <div class="barras">
-            <div class="divname">
-                <p class="barname">Segunda barra</p>
-            </div>
-            <div class="divcheck">
-                <input class="checkbox" type="checkbox">
+        
+        <div *ngFor="let div of divs">
+            <div class="barras">
+              <div class="divname">
+                <p class="barname">{{ div.barName }}</p>
+              </div>
+              <div class="divcheck">
+                <input class="checkbox" type="checkbox" [checked]="div.checked">
+              </div>
             </div>
         </div>
-
-
-
         <button class="newbar" (click)="openModal()">Nueva Barra</button>
     </div>
 
