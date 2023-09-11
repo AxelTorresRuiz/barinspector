@@ -1,11 +1,10 @@
-
-
 .sidebar{
-  max-height: max-content;
   width: 20%;
   height: 100%;
   position: fixed;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 .top-bar{
   width: 100%;
