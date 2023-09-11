@@ -29,11 +29,17 @@
 .left{
   flex: 1;
   text-align: center;
+  display: inline-block;
 }
 
 .right{
   flex: 1;
   text-align: center;
+  display: inline-block;
+}
+
+.buttons{
+  display: flex;
 }
 
 .text{
@@ -54,7 +60,7 @@
   border: 1px solid #000;
   width: 5.3125rem;
   height: 1.9375rem;
-  margin: 2rem;
+
 }
 .custom-button.active {
   background-color: #AB094D;
@@ -65,16 +71,16 @@
   color: #000;
   text-align: center;
   font-family: Homenaje;
-  font-size: 5.3125rem;
+  font-size: 4.3125rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding-top: 4rem;
 }
 
 .inputtext{
-  
   width: 23.4375rem;
-  height: 8.625rem;
+  height: 6.625rem;
   flex-shrink: 0;
   color: #000;
   text-align: center;
@@ -108,9 +114,39 @@
   margin: 1rem;
   margin-top: 3rem;
 }
+.oz{
+  width: 5.3125rem;
+  height: 1.9375rem;
+  flex-shrink: 0;
+  border-radius: 1.875rem;
+  border: 1px solid #000;
+  background: #FBFBFB;
+  color: #4B4540;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-right: 2rem;
+}
+.oz.active{
+  background: #AB094D; 
+  color: #FFF;
+
+}
+.oztext{
+  color: #4A4844;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  }
+
 
 .img{
-  width: 18.3125rem;
+  width: 24.3125rem;
   height: 26.0625rem;
   flex-shrink: 0;
 }

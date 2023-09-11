@@ -1,5 +1,5 @@
-import { Component,OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component,Inject,OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { BasculaService } from 'src/app/services/bascula.service';
 @Component({
   selector: 'app-catalogue-modal',
@@ -8,10 +8,12 @@ import { BasculaService } from 'src/app/services/bascula.service';
 })
 export class CatalogueModalComponent implements OnInit {
    heightValue!: number;
-  constructor(private bascula:BasculaService,private dialogRef: MatDialogRef<CatalogueModalComponent>){}
+  constructor(private bascula:BasculaService,private dialogRef: MatDialogRef<CatalogueModalComponent>, @Inject(MAT_DIALOG_DATA) public data:{botellaSeleccionada: any}){}
 
   button1Active: boolean = false;
   button2Active: boolean = false;
+  btn1active: boolean=false;
+  btn2active: boolean=false;
 
   toggleButton(button: string): void {
     if (button === 'button1') {
@@ -21,9 +23,15 @@ export class CatalogueModalComponent implements OnInit {
     }
   }
 
+  tglButton(button: string): void {
+    if (button === 'btn1') {
+      this.btn1active = !this.btn1active;
+    } else if (button === 'btn2') {
+      this.btn2active = !this.btn2active;
+    }
+  }
   ngOnInit(){
     this.bascula.startConnection();
-
     this.bascula.getWeightObservable().subscribe(weight=>{
       this.heightValue = weight;
     })

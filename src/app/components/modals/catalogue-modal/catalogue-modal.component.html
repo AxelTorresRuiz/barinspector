@@ -1,24 +1,42 @@
-<div class="principal">
+<div class="principal" *ngIf="data.botellaSeleccionada">
   <div class="header">
     Agregar
     <p class="close-modal" (click)="closeModal()">X</p>
   </div>
-  <div class="body">
 
-    <div class="left">
-      <p class="text">Tequila Jose cuervo <br> tradicional plata</p>
-      <img class="img" src="../../../../assets/botella.png" alt="botellon.png">
+  <div class="body">
+    <div class="left col-md-6">
+      <div>
+        <p class="text">{{data.botellaSeleccionada.Liquor}}</p>
+      </div>
+      <div>
+        <img class="img" src="{{data.botellaSeleccionada.Image}}" alt="botellon.png">
+      </div>
+      <div>
+        <button (click)="tglButton('btn1')" [ngClass]="{'active': btn1active}"  class="oz">1 O</button>
+        <button (click)="tglButton('btn2')" [ngClass]="{'active': btn2active}"  class="oz">1 1/2 Oz</button>
+      </div>
+      <div>
+        <p class="oztext">Selecciona el modo de servir el producto (este dato afectara los resultados de las auditorias)
+        </p>
+      </div>
     </div>
 
-    <div class="right">
-      <p class="text">Selecciona el tamaño</p>
-      <button (click)="toggleButton('button1')" [ngClass]="{'active': button1Active}" class="custom-button" >695ml</button>
-      <button (click)="toggleButton('button2')" [ngClass]="{'active': button2Active}" class="custom-button" >960ml</button>
-      <label class="peso" for="weightInput">Peso:</label>
-      <input class="inputtext" type="text" id="weightInput" [(ngModel)]="heightValue">
-      <button class="btnmodal">Botella Nueva</button>
-      <button class="btnmodal">Agregar</button>
-
+    <div class="right col-md-6">
+      <div>
+        <p class="text">Selecciona el tamaño</p>
+      </div>
+      <div>
+        <button (click)="toggleButton('button1')" [ngClass]="{'active': button1Active}" class="custom-button">{{data.botellaSeleccionada.Presentacion}}</button>
+      </div>
+      <div>
+        <label class="peso" for="weightInput">Peso:</label>
+        <input class="inputtext" type="text" id="weightInput" [(ngModel)]="heightValue">
+      </div>
+      <div class="buttons">
+        <button class="btnmodal">Botella Nueva</button>
+        <button class="btnmodal">Agregar</button>
+      </div>
     </div>
 
   </div>
