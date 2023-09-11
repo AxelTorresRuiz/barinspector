@@ -5,10 +5,18 @@
   </div>
 
   <div id="botones">
-      <button class="boton" (click)="myBar()">Botellas</button>
-      <button class="boton" (click)="audit()">Auditoría</button>
-      <button class="boton" (click)="reports()">Reportes</button>
-      <button class="boton" (click)="managers()">Encargados</button>
-      <button class="boton" (click)="configuration()">Configuración</button>
+      <div class="col-ml-2">
+        <button class="boton" (click)="myBar()">Botellas</button>
+      </div> 
+      <div class="col-ml-2">
+        <button class="boton" (click)="audit()">Auditoría</button>
+      </div>
+        <button class="boton" (click)="reports()">Reportes</button>
+      <div class="col-ml-2">
+        <button class="boton" (click)="managers()">Encargados</button>
+      </div>
+      <div class="col-ml-2">
+        <button class="boton" (click)="configuration()">Configuración</button>
+      </div>
   </div>
 </div>
