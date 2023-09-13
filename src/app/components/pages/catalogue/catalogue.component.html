@@ -1,19 +1,19 @@
 <div class="bar">
-  <button type="button" class="btn btn-outline-dark">Tequila</button>
-  <button type="button" class="btn btn-outline-dark">Whisky</button>
-  <button type="button" class="btn btn-outline-dark">Ron</button>
+  <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Tequila')" >Tequila</button>
+  <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Whisky')">Whisky</button>
+  <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Ron')">Ron</button>
   <button type="button" class="btn btn-outline-dark">Vodka</button>
   <button type="button" class="btn btn-outline-dark">Ginebra</button>
   <button type="button" class="btn btn-outline-dark">Brandy</button>
-  <button type="button" class="btn btn-outline-dark">Coñac</button>
-  <button type="button" class="btn btn-outline-dark">Otros</button>
+  <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Coñac')">Coñac</button>
+  <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Otros')">Otros</button>
 
 
   <div class="card" *ngFor="let bottle of bottles" (click)="openModal(bottle)">
     <div class="card-body">
       <div class="row">
         <div class="col-md-7">
-          <p class="botellatxt">{{bottle.Liquor}}</p>
+          <p class="botellatxt">{{bottle.Name}}</p>
           <button class="btnml">{{bottle.Presentacion}}</button>
         </div>
         <div class="col-md-5">

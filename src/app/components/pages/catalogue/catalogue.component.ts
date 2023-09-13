@@ -21,16 +21,21 @@ export class CatalogueComponent {
       disableClose:true,
       data:{botellaSeleccionada:bottle}
     });
-
   }
 
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Catálogo')
-
     this.bottles = this.catalogueService.getBottle();
-    
-
   }
 
+  filterByLiquor(liquorType: string) {
+    // Si el tipo de licor es 'Todos', mostrar todas las botellas
+    if (liquorType === 'Todos') {
+      this.bottles = this.catalogueService.getBottle();
+    } else {
+      // Filtrar las botellas por el tipo de licor seleccionado
+      this.bottles = this.catalogueService.getBottle().filter(bottle => bottle.Liquor && bottle.Liquor.trim() === liquorType);
+    }
+  }
 
 }

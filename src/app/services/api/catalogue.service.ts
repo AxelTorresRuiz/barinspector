@@ -8,7 +8,8 @@ export class CatalogueService {
   private cataloguebottle:any[] = [
     {
       "Id": 1,
-      "Liquor": "BLACK & WHITE",
+      "Name": "BLACK & WHITE",
+      "Liquor ": "Whisky",
       "SKU": null,
       "Presentacion": "700 ml",
       "FullBottleWeight": 1087.0,
@@ -22,7 +23,8 @@ export class CatalogueService {
   },
   {
       "Id": 2,
-      "Liquor": "AZUL",
+      "Name": "AZUL",
+      "Liquor ": "Tequila",
       "SKU": null,
       "Presentacion": "950 ml",
       "FullBottleWeight": 1553.0,
@@ -36,7 +38,8 @@ export class CatalogueService {
   },
   {
       "Id": 3,
-      "Liquor": "CENTE AÑEJO",
+      "Name": "CENTE AÑEJO",
+      "Liquor": "Tequila",
       "SKU": null,
       "Presentacion": "695 ml",
       "FullBottleWeight": 1331.0,
@@ -50,7 +53,8 @@ export class CatalogueService {
   },
   {
       "Id": 4,
-      "Liquor": "CUERVO ESPECIAL",
+      "Name": "CUERVO ESPECIAL",
+      "Liquor": "Tequila",
       "SKU": null,
       "Presentacion": "990 ml",
       "FullBottleWeight": 1576.0,
@@ -64,7 +68,8 @@ export class CatalogueService {
   },
   {
       "Id": 5,
-      "Liquor": "D. JULIO BLANCO",
+      "Name": "D. JULIO BLANCO",
+      "Liquor": "Tequila",
       "SKU": null,
       "Presentacion": "750 ml",
       "FullBottleWeight": 1406.0,
@@ -78,7 +83,8 @@ export class CatalogueService {
   },
   {
       "Id": 6,
-      "Liquor": "D. JULIO REPOSADO",
+      "Name": "D. JULIO REPOSADO",
+      "Liquor": "Tequila",
       "SKU": null,
       "Presentacion": "750 ml",
       "FullBottleWeight": 1393.0,
@@ -92,7 +98,8 @@ export class CatalogueService {
   },
   {
       "Id": 7,
-      "Liquor": "D. JULIO AÑEJO",
+      "Name": "D. JULIO AÑEJO",
+      "Liquor": "Tequila",
       "SKU": null,
       "Presentacion": "750 ml",
       "FullBottleWeight": 1465.0,
@@ -106,7 +113,8 @@ export class CatalogueService {
   },
   {
       "Id": 8,
-      "Liquor": "HERRADURA REP",
+      "Name": "HERRADURA REP",
+      "Liquor": "Tequila",
       "SKU": null,
       "Presentacion": "950 ml",
       "FullBottleWeight": 1870.0,
@@ -120,7 +128,8 @@ export class CatalogueService {
   },
   {
       "Id": 9,
-      "Liquor": "HORNITOS",
+      "Name": "HORNITOS",
+      "Liquor": "Tequila",
       "SKU": null,
       "Presentacion": "1000 ml",
       "FullBottleWeight": 1666.0,
@@ -134,7 +143,8 @@ export class CatalogueService {
   },
   {
       "Id": 10,
-      "Liquor": "1800 CRISTALINO",
+      "Name": "1800 CRISTALINO",
+      "Liquor": "Tequila",
       "SKU": null,
       "Presentacion": "700 ml",
       "FullBottleWeight": 1380.0,
@@ -148,7 +158,8 @@ export class CatalogueService {
   },
   {
       "Id": 11,
-      "Liquor": "BACARDI BLANCO",
+      "Name": "BACARDI BLANCO",
+      "Liquor": "Ron",
       "SKU": null,
       "Presentacion": "1750 ml",
       "FullBottleWeight": 2657.0,
@@ -162,7 +173,8 @@ export class CatalogueService {
   },
   {
       "Id": 12,
-      "Liquor": "BACARDI SOLERA",
+      "Name": "BACARDI SOLERA",
+      "Liquor": "Ron",
       "SKU": null,
       "Presentacion": "1000 ml",
       "FullBottleWeight": 1623.0,
@@ -176,7 +188,8 @@ export class CatalogueService {
   },
   {
       "Id": 13,
-      "Liquor": "LICOR 43",
+      "Name": "LICOR 43",
+      "Liquor": "Otros",
       "SKU": null,
       "Presentacion": "1000 ml",
       "FullBottleWeight": 1702.0,
@@ -190,7 +203,8 @@ export class CatalogueService {
   },
   {
       "Id": 14,
-      "Liquor": "GLENLIVET 12",
+      "Name": "GLENLIVET 12",
+      "Liquor": "Whisky",
       "SKU": null,
       "Presentacion": "750 ml",
       "FullBottleWeight": 1257.0,
@@ -204,7 +218,8 @@ export class CatalogueService {
   },
   {
       "Id": 15,
-      "Liquor": "JACK DANIELS",
+      "Name": "JACK DANIELS",
+      "Liquor": "Whisky",
       "SKU": null,
       "Presentacion": "1000 ml",
       "FullBottleWeight": 1600.0,
@@ -218,7 +233,8 @@ export class CatalogueService {
   },
   {
       "Id": 16,
-      "Liquor": "JB",
+      "Name": "JB",
+      "Liquor": "Whisky",
       "SKU": null,
       "Presentacion": "750 ml",
       "FullBottleWeight": 1140.0,
@@ -232,7 +248,8 @@ export class CatalogueService {
   },
   {
       "Id": 17,
-      "Liquor": "MACALLAN 12",
+      "Name": "MACALLAN 12",
+      "Liquor": "Whisky",
       "SKU": null,
       "Presentacion": "700 ml",
       "FullBottleWeight": 1445.0,
@@ -246,7 +263,8 @@ export class CatalogueService {
   },
   {
       "Id": 18,
-      "Liquor": "WILLIAM L",
+      "Name": "WILLIAM L",
+      "Liquor": "Whisky",
       "SKU": null,
       "Presentacion": "750 ml",
       "FullBottleWeight": 1101.0,
@@ -260,7 +278,8 @@ export class CatalogueService {
   },
   {
       "Id": 19,
-      "Liquor": "MARTELL VSOP",
+      "Name": "MARTELL VSOP",
+      "Liquor": "Coñac",
       "SKU": null,
       "Presentacion": "700 ml",
       "FullBottleWeight": 1176.0,
