@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { PagetitleService } from 'src/app/services/pagetitle.service';
 import { BottleserviceService } from 'src/app/services/api/bottleservice.service';
 import { BasculaService } from 'src/app/services/bascula.service';
+import { bottleGet, bottlePost, bottlePut } from 'src/app/services/api/Bottle.service'
+import { Bottle } from 'src/app/services/api/Bottle.model';
+import { BarBottle } from 'src/app/services/api/BarBottle.model';
 @Component({
   selector: 'app-mybar',
   templateUrl: './mybar.component.html',
