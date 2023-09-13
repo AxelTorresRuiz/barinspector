@@ -1,0 +1,90 @@
+.card{
+    width: 17.4375rem;
+    height: 27.8125rem;
+    flex-shrink: 0;
+    background-color: #042352;
+    border-radius: 1rem;
+}
+.sup{
+    height: 14rem; 
+    background-color: #174a8b;
+    border-bottom:solid;
+    box-shadow: 0px 15px 5px 0px rgba(0,0,0,.5);
+    border-bottom-left-radius: 10rem;
+    border-bottom-right-radius:10rem;
+    text-align: center;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.inf{
+    height: 12rem; 
+    background-color: #042352;
+    text-align: center;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+}
+.imagen{
+    width: 9.30575rem;
+    height: 9.30438rem;
+    flex-shrink: 0;
+    border-radius: 5rem;
+    margin-top: 1.5rem;
+}
+
+.name{
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+.textprim{
+    color: #82A6C8;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.0625rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin: 0;
+    }
+.textse{
+    color: #82A6C8;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.0625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    margin-top: .3rem;
+    }
+.botellas{
+    width: 7.75rem;
+    height: 4.125rem;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 0;
+    left: 5rem;
+}
+.add{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 4rem;
+    border-style: none;
+    background-color: #AB094D;
+    color: #fff;
+    font-size: 3rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
