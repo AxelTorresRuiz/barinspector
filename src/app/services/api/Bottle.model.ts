@@ -10,8 +10,8 @@ export interface Bottle {
     emptyBottleWeight: number;
     weightPerOunce: number;
     slug?: string;
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt?: Date;
+    updatedAt?: Date;
     deleteAt?: Date;
     image?: string;
     BarBottle?: BarBottle[];

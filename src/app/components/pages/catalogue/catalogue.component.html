@@ -17,7 +17,7 @@
           <button class="btnml">{{bottle.Presentacion}}</button>
         </div>
         <div class="col-md-5">
-          <img class="img" src="{{bottle.Image}}" alt="botellon">
+          <img class="img" [src]="'https://barinspector.com/api/bottle/'+bottle.Id+'/getimagen'" alt="botellon">
         </div>
       </div>
     </div>
