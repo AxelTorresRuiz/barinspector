@@ -10,7 +10,7 @@
         <p class="text">{{data.botellaSeleccionada.Name}}</p>
       </div>
       <div>
-        <img class="img" src="{{data.botellaSeleccionada.Image}}" alt="botellon.png">
+        <img class="img" [src]="'https://barinspector.com/api/bottle/'+data.botellaSeleccionada.Id+'/getimagen'" alt="botellon.png">
       </div>
       <div>
         <button (click)="tglButton('btn1')" [ngClass]="{'active': btn1active}"  class="oz">1 O</button>
