@@ -3,6 +3,8 @@ import { PagetitleService } from 'src/app/services/pagetitle.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { NewbarModalComponent } from '../../modals/newbar-modal/newbar-modal.component';
 import { Router } from '@angular/router';
+import {barGet, barPost} from "../../../services/api/Bar.service";
+import { Bar } from 'src/app/services/api/Bar.model';
 
 @Component({
   selector: 'app-configuration',
@@ -36,15 +38,20 @@ export class ConfigurationComponent implements OnInit {
       if (result) {
         this.divs = result; // Actualiza la lista divs con los datos del modal
       }
+      this.actualizarBarras();
     });
   }
   
   moveadd(){
     this.router.navigate(['/addbottle'])
   }
-  
+  async actualizarBarras(){
+    this.barras=await barGet() as Bar[];
+  }
+  barras:Bar[]=[];
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Configuración')
+    this.actualizarBarras();
   }
   viewcatalogue(){
     this.router.navigate(['/catalogue'])

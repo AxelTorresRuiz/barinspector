@@ -2,7 +2,7 @@ import { Bar } from "./Bar.model";
 import { Url } from "./const.api";
 
 var URLCompleta = Url + "/Bar";
-export async function barGet(parametros: string="") {
+export async function barGet(parametros: string="?$filter=DeletedAt eq null") {
     let bar={};
     await fetch(URLCompleta + parametros)
         .then(response => response.json())
@@ -19,6 +19,7 @@ export async function barGet(parametros: string="") {
 }
 
 export async function barPost(bar:Bar, params:string="") {
+    console.log(bar)
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 

@@ -3,13 +3,13 @@
     <div class="left">
         <p>Barras Activas</p>
         
-        <div *ngFor="let div of divs">
+        <div *ngFor="let div of barras">
             <div class="barras">
               <div class="divname">
-                <p class="barname">{{ div.barName }}</p>
+                <p class="barname">{{ div.Name }}</p>
               </div>
               <div class="divcheck">
-                <input class="checkbox" type="checkbox" [checked]="div.checked">
+                <input class="checkbox" type="checkbox" checked="True">
               </div>
             </div>
         </div>

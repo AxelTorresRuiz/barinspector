@@ -1,11 +1,11 @@
 import { BarBottle } from "./BarBottle.model";
 
 export interface Bar {
-    id: number;
-    name: string;
-    slug?: string;
-    createdAt: string;
-    updatedAt: string;
-    deletedAt?: string;
-    barBottles: BarBottle[];
+    Id: number;
+    Name: string;
+    Slug?: string;
+    CreatedAt?: string;
+    UpdatedAt?: string;
+    DeletedAt?: string;
+    barBottles?: BarBottle[];
   }
