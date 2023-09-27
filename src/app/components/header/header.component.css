@@ -2,7 +2,7 @@
   align-items: center;
   background-color: #ffffff;
   width: 80%;
-  position: fixed;
+  position: absolute;
   left: 20%;
   overflow: hidden;
   padding: 0;
@@ -31,8 +31,6 @@
 
 .boton {
   height: 1.9375rem;
-  margin-top: 1rem;
-  padding-left: 3rem;
   background-color: transparent;
   border: none;
   border-radius: 0.375rem 0.375rem 0rem 0rem;;

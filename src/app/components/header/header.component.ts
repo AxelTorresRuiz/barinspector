@@ -9,8 +9,6 @@ import { PagetitleService } from 'src/app/services/pagetitle.service';
 })
 export class HeaderComponent {
 
-
-
   constructor(private router: Router, private pageTitleService:PagetitleService) { }
 
   getPageTitle():string{
