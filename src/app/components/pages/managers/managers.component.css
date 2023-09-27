@@ -1,9 +1,19 @@
+.grid-container{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr; /* Crea tres columnas del mismo tamaño */
+   gap: 10px;
+}
 .card{
     width: 17.4375rem;
     height: 27.8125rem;
     flex-shrink: 0;
     background-color: #042352;
     border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    margin-left: 8rem;
+    margin-top: 5rem;
 }
 .sup{
     height: 14rem; 
@@ -84,7 +94,5 @@
     background-color: #AB094D;
     color: #fff;
     font-size: 3rem;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    margin-left: 3rem;
 }
