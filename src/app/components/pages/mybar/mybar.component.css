@@ -1,12 +1,28 @@
-.bar{
+.card{
+  width: 29.3125rem;
+  height: 13.25rem;
+  flex-shrink: 0;
+  margin-top: 2rem;
+  margin-right: .5rem;
+  margin-left: .5rem;
   position: relative;
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  overflow-y: auto;
+  border-radius: 1.875rem;
+  border: 1px solid #C9C9C9;
+  background: #FFF;
+  display: inline-block;
+  white-space: normal;
+  word-wrap: break-word; 
+  overflow: hidden; 
 }
+
+@media(min-with:1200px){
+  .card{
+    width: 25.3125rem;
+    height: 10.25rem;
+  }
+}
+
+
 .btn{
   margin-top: 1pc;
   margin-left: 3pc;
@@ -21,25 +37,12 @@
   color: white;
 }
 
-.card{
-  width: 29.3125rem;
-  height: 13.25rem;
-  flex-shrink: 0;
-  margin-top: 1rem;
-  margin-right: .5rem;
-  position: relative;
-  border-radius: 1.875rem;
-  border: 1px solid #C9C9C9;
-  background: #FFF;
-  display: inline-block;
-  white-space: normal;
-  word-wrap: break-word; 
-  overflow: hidden; 
-}
+
 .card-body{
   display: inline-block;
   position: relative;
   text-align: center;
+  padding: 0;
 }
 .add{
   width: 5rem;
@@ -50,9 +53,9 @@
   color: #fff;
   font-size: 3rem;
   text-align: center;
-  position: absolute;
-  right: 0.5rem;
-  bottom: 0.5rem;
+  position: relative;
+  right: 0;
+  bottom: 0;
 }
 
 .botellatxt{
@@ -66,7 +69,8 @@
   font-weight: 700;
   line-height: normal;
   position: relative;
-  right: 1.5rem;
+  margin-top: .3rem;
+  margin-right: .5rem
 }
 
 .btnml{
@@ -77,14 +81,51 @@
   border: 1px solid #000;
   background: rgba(217, 217, 217, 0.00);
   position: relative;
-  margin-right: .5rem;
-  margin-top: 2rem;
+  left: 1.5rem;
+  margin-top: .5rem;
 }
 
 .img{
-  width: 6.375rem;
-  height: 11.3125rem;
+  width: 4.375rem;
+  height: 9.3125rem;
   flex-shrink: 0;
   position:relative;
   left: 1.5rem;
+  margin-left: .2rem;
+  margin-top: .5rem;
+  
+}
+
+.textonza{
+  color: #535353;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  line-height: normal;
+  margin: 0;
+}
+
+.onzinput{
+  width: 5.3125rem;
+  height: 1.9375rem;
+  flex-shrink: 0;
+  border-radius: 1.875rem;
+  border: 1px solid #000;
+  background: rgba(217, 217, 217, 0.00);
+  color: #4B4540;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 1.5rem;
+}
+
+.textos{
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  left: 0;
+
 }

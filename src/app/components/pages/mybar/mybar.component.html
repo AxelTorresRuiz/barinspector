@@ -1,29 +1,55 @@
-<div class="bar col-12">
-  <button type="button"  class="btn btn-outline-dark col-1">Tequila</button>
-  <button type="button"  class="btn btn-outline-dark col-1">Whisky</button>
-  <button type="button"  class="btn btn-outline-dark col-1">Ron</button>
-  <button type="button"  class="btn btn-outline-dark col-1">Vodka</button>
-  <button type="button"  class="btn btn-outline-dark col-1">Ginebra</button>
-  <button type="button"  class="btn btn-outline-dark col-1">Brandy</button>
-  <button type="button"  class="btn btn-outline-dark col-1">Coñac</button>
-  <button type="button"  class="btn btn-outline-dark col-1">Otros</button>
 
-
-  <div class="card col-4">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-7">
-          <p class="botellatxt">Jose Cuervo Tradicional</p>
-          <button class="btnml">695ml</button>
-          <button class="btnml">950ml</button>
-        </div>
-        <div class="col-5">
-          <img class="img" src="../../../../assets/Imgbotellas/image 2.png" alt="botellon">
-        </div>  
-        </div>
-    </div>
+  <div class="botones">
+    <button type="button"  class="btn btn-outline-dark">Tequila</button>
+    <button type="button"  class="btn btn-outline-dark">Whisky</button>
+    <button type="button"  class="btn btn-outline-dark">Ron</button>
+    <button type="button"  class="btn btn-outline-dark">Vodka</button>
+    <button type="button"  class="btn btn-outline-dark">Ginebra</button>
+    <button type="button"  class="btn btn-outline-dark">Brandy</button>
+    <button type="button"  class="btn btn-outline-dark">Coñac</button>
+    <button type="button"  class="btn btn-outline-dark">Otros</button>
   </div>
 
-  <button class="add" (click)="agregar()">+</button>
-</div>
+    
+      <div class="card col">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-8">
+              <p class="botellatxt">Jose Cuervo Tradicional Reposado</p>
+              <div style="display: flex;">
+                <div class="textos col-6">
+                    <p class="textonza">OZ.TOTAL</p>
+                    <p class="onzinput">24</p>
+                    <p class="textonza">OZ. RESTANTES</p>
+                    <p class="onzinput">4</p>
+                  </div>
+
+                  <div class="grafica col-6" style="max-width: 200;">
+                    <canvas baseChart
+                            [datasets]="pieChartData"
+                            [type]="pieChartType"
+                            [options]="pieChartOptions">
+                    </canvas>
+                  </div>
+                </div>    
+            </div>
+            <div class="col-4">
+              <img class="img" src="../../../../assets/Imgbotellas/image 2.png" alt="botellon">
+              <button class="btnml">695ml</button>
+            </div>  
+            </div>
+        </div>
+      </div>
+
+      
+      
+      
+
+    <button class="add" (click)="agregar()">+</button>
+  
+
+  
+    
+    
+
 
