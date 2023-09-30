@@ -23,7 +23,8 @@ export class MybarComponent implements OnInit {
   };
   public pieChartData: ChartDataset[]=[
     {
-      data:[24,4]
+      data:[24,4],
+      backgroundColor:['red','green']
     },
   ];
   public pieChartType: ChartType = 'pie';
