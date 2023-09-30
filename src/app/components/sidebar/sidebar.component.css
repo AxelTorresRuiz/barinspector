@@ -1,7 +1,7 @@
 .sidebar{
   width: 20%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   display: flex;
   margin: 0;
   padding: 0;
@@ -52,5 +52,5 @@
   position: relative;
   left: 3rem;
   top: 9rem;
-  flex: content;
+  
 }

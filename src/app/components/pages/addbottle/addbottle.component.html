@@ -1,68 +1,87 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-5" style="margin-top: 20px;">
-            <div style="padding: 10px;">
-                <label class="labels" for="opcion">Tipo de licor</label>
-                <div class="dropdown-container">
-                    <div class="dropdown-icon">&#9660;</div>
-                    <select id="opcion" class="form-control">
-                        <option value="" disabled selected hidden>Selecciona una opción</option>
-                        <option value="opcion1">Tequila</option>
-                        <option value="opcion2">Whisky</option>
-                        <option value="opcion3">Ron</option>
-                        <option value="opcion4">Vodka</option>
-                        <option value="opcion3">Ginebra</option>
-                        <option value="opcion3">Brandy</option>
-                        <option value="opcion3">Coñac</option>
-                        <option value="opcion3">Otros</option>
-                    </select>
-                </div>
-
-                <label class="labels" for="input2">Peso de botella llena (gr)</label>
-                <input type="text" id="input2" class="inputs">
-
-                <label class="labels" for="input3">Presentacion (ml)</label>
-                <input type="text" id="input3" class="inputs">
-            </div>
-        </div>
-        <div class="col-md-7" style="margin-top: 20px;">
-            <div style="padding: 10px;">
-                
-                <label for="name" class="labels">Nombre</label>
-                <input type="text" id="input4" class="inputname">
-                    <div class="row">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label class="labels" for="input2">Peso de botella vacia (gr)</label>
-                                <input type="text" class="inputs">
+<div class="row" style="margin-top: 2rem;">
+    <div class="col-6" style="text-align: justify;">
+        <div class="panel panel-inverse disable-draggable">
+            <div class="panel-heading" style="cursor: default;"></div>
+                <div class="panel-body p-r-0 p-l-0">
+                    <div class="col-md-12 p-r-5 p-l-5">
+                        <div class="form-group">
+                            <p class="col-md-12" style="font-size: 1.5rem;">Tipo de licor</p>
+                            <div class="col-md-12">
+                                <select id="opcion" class="col-md-12 form-control">
+                                    <option value="" disabled selected hidden>Selecciona una opción</option>
+                                    <option value="opcion1">Tequila</option>
+                                    <option value="opcion2">Whisky</option>
+                                    <option value="opcion3">Ron</option>
+                                    <option value="opcion4">Vodka</option>
+                                    <option value="opcion3">Ginebra</option>
+                                    <option value="opcion3">Brandy</option>
+                                    <option value="opcion3">Coñac</option>
+                                    <option value="opcion3">Otros</option>
+                                </select>
                             </div>
-                            <div class="col-md-6">
-                                <label class="labels" for="input2">Peso por onza (gr)</label>
-                                <input type="text" class="inputs">
-                            </div>
-                            <div class="col-md-6" style="margin-top: 20px;">
-                                <label class="labels" for="input2">Codigo de barras</label>
-                                <input type="text" class="inputs">
-                            </div>
-
-                            <div class="col-md-6" style="margin-top: 20px;">
-                                <label class="labels" for="input2">Imagen representativa</label>
-                                <div class="addfile">
-                                    <input type="text" class="inputimg">
-                                    <button class="files">+</button>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6" style="margin-top: 20px;">
-                                <button class="btn">Guadar</button>
-                            </div>
-                            
                         </div>
-                    </div> 
-
+                    </div>
+                    <div class="col-md-12 p-r-5 p-l-5">
+                        <div class="form-group">
+                            <p class="col-md-12" style="font-size: 1.5rem; margin-top: 4rem;">Peso botella llena(gr)</p>
+                            <div class="col-md-12">
+                                <input type="text" class="col-md-8" style="height: 3.4375rem;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <p class="col-md-12" style="font-size: 1.5rem; margin-top: 4rem;">Presentacion(ml)</p>
+                            <div class="col-md-12">
+                                <input type="text" class="col-md-8" style="height: 3.4375rem;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="col-6" style="text-align: justify;">
+        <div class="panel panel-inverse disable-draggable">
+            <div class="panel-heading" style="cursor: default;"></div>
+            <div class="panel-body p-r-0 p-l-0">
+                <div class="col-md-12 p-r-5 p-l-5">
+                    <div class="form-group">
+                        <p class="col-md-12" style="font-size: 1.5rem;">Nombre</p>
+                        <div class="col-md-12">
+                            <input type="text" class="col-md-12" style="height: 3.4375rem;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 p-r-5 p-l-5" style="display: flex;" >
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <p class="col-md-12" style="margin-top: 3.2rem; font-size: 1.5rem;">Peso botella vacia(gr)</p>
+                            <input type="text" class="col-md-12" style="height: 3.4375rem;">
+                        </div>
+                        <div class="col-md-12">
+                            <p class="col-md-12" style="margin-top: 3.2rem; font-size: 1.5rem;">Peso por onza(gr)</p>
+                            <input type="text" class="col-md-12" style="height: 3.4375rem;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <p class="col-md-12" style="margin-top: 3.2rem; font-size: 1.5rem;">Peso botella vacia(gr)</p>
+                            <input type="text" class="col-md-12" style="height: 3.4375rem;">
+                        </div>
+                        <div class="col-md-12">
+                            <p class="col-md-12" style="margin-top: 3.2rem; font-size: 1.5rem;">Peso por onza(gr)</p>
+                            <input type="text" class="col-md-12" style="height: 3.4375rem;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <button class="btn">Guadar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
-    
 </div>

@@ -14,22 +14,45 @@
             </div>
         </div>
         <button class="newbar" (click)="openModal()">Nueva Barra</button>
+      </div>
     </div>
+  </div>
 
-    <div class="right">
-        <p>Catalogo Botellas</p>
-        <button class="boton" (click)="viewcatalogue()">Ver Catalogo</button>
-        <button class="boton" (click)="moveadd()"> Añadir</button>
-        <br>
-        <br>
-        <br>
-        <p class="txtlogo">Logo de la empresa</p>
-        
-        <div class="rectangulo">
-            <input class="inputlogo" type="text" [disabled]="inputDisabled">
-            <button (click)="toggleInput()" class="btnlogo">+</button>
+  <div class="col-6" style="text-align:justify;">
+    <div class="panel panel-inverse disable-draggable">
+      <div class="panel-heading" style="cursor: default;"></div>
+      <div class="panel-body p-r-0 p-l-0">
+        <div class="col-md-12 p-r-5 p-l-5">
+          <div class="form-group">
+            <p class="col-md-12" style="font-size: 1.5rem;">Catalogo de Botellas</p>
+          </div>
         </div>
-        <button class="save">Guardar</button>
+        <div class="col-md-12 p-r-6 p-l-6">
+          <div class="form-group">
+            <button class="boton" (click)="viewcatalogue()">Ver Catalogo</button>
+            <button class="boton" (click)="moveadd()"> Añadir</button>
+          </div>
+        </div>
+        <div class="col-md-6 p-r-5 p-l-5" style="margin-top: 3rem;">
+          <div class="form-group">
+              <p class="col-md-12" style="font-size: 1.5rem;">Logo de la empresa</p>
+              <div class="col-md-12" style="display: flex;">
+                  <input class="col-md-12" type="text" style="height: 3.4375rem;">
+                  <button class="btnlogo">+</button>
+              </div>
+          </div>
+        <div class="col-md-12 p-r-6 p-l-6">
+          <div class="form-group">
+            <button class="save">Guardar</button>
+          </div>
+        </div>  
+      </div>
+      </div>
     </div>
-
+  </div>
 </div>
+
+<!-- <button class="newbar" (click)="openModal()">Nueva Barra</button> -->
+<!-- <button class="boton" (click)="viewcatalogue()">Ver Catalogo</button>
+<button class="boton" (click)="moveadd()"> Añadir</button> -->
+<!-- <button class="save">Guardar</button> -->

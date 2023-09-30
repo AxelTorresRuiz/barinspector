@@ -1,4 +1,4 @@
-<div class="bar">
+<div class="botones">
   <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Tequila')" >Tequila</button>
   <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Whisky')">Whisky</button>
   <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Ron')">Ron</button>
@@ -7,7 +7,7 @@
   <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Brandy')">Brandy</button>
   <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Coñac')">Coñac</button>
   <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Otros')">Otros</button>
-
+</div>  
 
   <div class="card" *ngFor="let bottle of bottles" (click)="openModal(bottle)">
     <div class="card-body">
@@ -25,4 +25,8 @@
 
   
 
-</div>
+
+
+  <!-- <p class="botellatxt">{{bottle.Name}}</p>
+          <button class="btnml">{{bottle.Presentacion}}</button> -->
+          <!-- <img class="img" [src]="'https://barinspector.com/api/bottle/'+bottle.Id+'/getimagen'" alt="botellon"> -->

@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { PagetitleService } from 'src/app/services/pagetitle.service';
-
+import { Router } from '@angular/router';
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class HeaderComponent {
+export class NavbarComponent {
+  constructor(private pagetitle: PagetitleService, private router:Router){}
 
-  constructor(private router: Router, private pageTitleService:PagetitleService) { }
 
   getPageTitle():string{
-    return this,this.pageTitleService.getPageTitle();
+    return this, this.pagetitle.getPageTitle();
   }
-
   myBar(){
     this.router.navigate(['/mybar'])
   }
@@ -31,5 +29,3 @@ export class HeaderComponent {
     this.router.navigate(['/configuration'])
   }
 }
-
-
