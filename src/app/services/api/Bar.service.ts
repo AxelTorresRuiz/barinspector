@@ -1,9 +1,10 @@
 import { Bar } from "./Bar.model";
+import { db, useDB } from "./DBLocal";
 import { Url } from "./const.api";
 
 var URLCompleta = Url + "/Bar";
-export async function barGet(parametros: string="?$filter=DeletedAt eq null") {
-    let bar={};
+export async function barGet(parametros: string = "?$filter=DeletedAt eq null") {
+    let bar = {};
     await fetch(URLCompleta + parametros)
         .then(response => response.json())
         .then(data => {
@@ -18,7 +19,7 @@ export async function barGet(parametros: string="?$filter=DeletedAt eq null") {
     return bar;
 }
 
-export async function barPost(bar:Bar, params:string="") {
+export async function barPost(bar: Bar, params: string = "") {
     console.log(bar)
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -27,21 +28,21 @@ export async function barPost(bar:Bar, params:string="") {
         method: 'POST',
         headers: myHeaders,
         body: JSON.stringify(bar)
-      };
+    };
 
     console.info(JSON.stringify(bar))
 
-    await fetch(URLCompleta+params, requestOptions)
-    .then(response => response.json())
-    .then(data => {
-        console.info(bar);
-    })
-    .catch( error => {
-        console.error("Error: ", error);
-    });
+    await fetch(URLCompleta + params, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            console.info(bar);
+        })
+        .catch(error => {
+            console.error("Error: ", error);
+        });
 }
 
-export async function barPut(bar:Bar, params:string="") {
+export async function barPut(bar: Bar, params: string = "") {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -49,16 +50,26 @@ export async function barPut(bar:Bar, params:string="") {
         method: 'PUT',
         headers: myHeaders,
         body: JSON.stringify(bar)
-      };
+    };
 
     console.info(JSON.stringify(bar))
 
-    await fetch(URLCompleta+params, requestOptions)
-    .then(response => response.json())
-    .then(data => {
-        console.info(bar);
-    })
-    .catch( error => {
-        console.error("Error: ", error);
-    });
+    await fetch(URLCompleta + params, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            console.info(bar);
+        })
+        .catch(error => {
+            console.error("Error: ", error);
+        });
+}
+
+export async function limpiraYGuardarBarraActiva(value:Bar){
+    await db.table("barActivo").clear();
+    db.table("barActivo").add(value);
+    obtenerBarraActiva()
+}
+
+export async function obtenerBarraActiva() {
+    return (await db.table("barActivo").toArray())[0];
 }

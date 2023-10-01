@@ -17,6 +17,7 @@ import { ChartType, ChartOptions, ChartDataset } from 'chart.js';
 
 
 export class MybarComponent implements OnInit {
+  
 
   public pieChartOptions: ChartOptions ={
     responsive: true,
@@ -24,7 +25,9 @@ export class MybarComponent implements OnInit {
   public pieChartData: ChartDataset[]=[
     {
       data:[24,4],
-      backgroundColor:['red','green']
+      backgroundColor:['#F8F0E5', '#0F2C59'],
+      borderColor: ['#001524', '#001524'], // Border colors for the datasets
+      borderWidth: 1 // Border width in pixels
     },
   ];
   public pieChartType: ChartType = 'pie';
@@ -41,7 +44,6 @@ export class MybarComponent implements OnInit {
 
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Mi barra')
-    
   }
 
 

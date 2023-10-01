@@ -3,8 +3,9 @@ import { PagetitleService } from 'src/app/services/pagetitle.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { NewbarModalComponent } from '../../modals/newbar-modal/newbar-modal.component';
 import { Router } from '@angular/router';
-import {barGet, barPost} from "../../../services/api/Bar.service";
+import { barGet, barPost, limpiraYGuardarBarraActiva, obtenerBarraActiva } from "../../../services/api/Bar.service";
 import { Bar } from 'src/app/services/api/Bar.model';
+import { db } from 'src/app/services/api/DBLocal';
 
 @Component({
   selector: 'app-configuration',
@@ -13,14 +14,16 @@ import { Bar } from 'src/app/services/api/Bar.model';
 })
 export class ConfigurationComponent implements OnInit {
 
-  constructor(private pageTitleService:PagetitleService,public dialog: MatDialog,private router:Router){}
+  constructor(private pageTitleService: PagetitleService, public dialog: MatDialog, private router: Router) { }
 
-  inputDisabled:boolean = false;
+  inputDisabled: boolean = false;
 
   divs: Array<{ barName: string, checked: boolean }> = [];
 
-  toggleInput(){
-    this.inputDisabled= !this.inputDisabled;
+  selection: boolean[] = [];
+
+  toggleInput() {
+    this.inputDisabled = !this.inputDisabled;
   }
 
   openModal() {
@@ -31,9 +34,9 @@ export class ConfigurationComponent implements OnInit {
     dialogConfig.data = {
       divs: this.divs // Pasar la lista divs al modal
     };
-    
+
     const dialogRef = this.dialog.open(NewbarModalComponent, dialogConfig);
-  
+
     dialogRef.afterClosed().subscribe((result: Array<{ barName: string, checked: boolean }>) => {
       if (result) {
         this.divs = result; // Actualiza la lista divs con los datos del modal
@@ -41,19 +44,43 @@ export class ConfigurationComponent implements OnInit {
       this.actualizarBarras();
     });
   }
-  
-  moveadd(){
+
+  moveadd() {
     this.router.navigate(['/addbottle'])
   }
-  async actualizarBarras(){
-    this.barras=await barGet() as Bar[];
+  async actualizarBarras() {
+    this.barras = await barGet() as Bar[];
   }
-  barras:Bar[]=[];
+  barraActiva: any = null;
+  barras: Bar[] = [];
+
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Configuración')
-    this.actualizarBarras();
+    this.actualizarBarras().then(() => {
+      this.selection = Array(this.barras.length).fill(false);
+      obtenerBarraActiva().then((r) => {
+        this.barraActiva = r;
+        delete this.barraActiva.id;
+        this.cualBarra();
+      });
+    });
   }
-  viewcatalogue(){
-    this.router.navigate(['/catalogue'])
+  cualBarra() {
+    this.selection.fill(false);
+    var indice = this.barras.findIndex(fila => fila.Id == this.barraActiva.Id);
+    if (indice >= 0) {
+      this.selection[indice] = true;
+    }
+  }
+
+  async seleccionarBarra(indice: number) {
+    this.selection.fill(false);
+    this.selection[indice] = true;
+    await limpiraYGuardarBarraActiva(this.barras[indice]);
+    this.barraActiva = this.barras[indice];
+  }
+
+  viewcatalogue() {
+    this.router.navigate(['/catalogue']);
   }
 }

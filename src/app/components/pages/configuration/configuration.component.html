@@ -3,20 +3,18 @@
     <div class="left">
         <p>Barras Activas</p>
         
-        <div *ngFor="let div of barras">
+        <div *ngFor="let div of barras; let i = index">
             <div class="barras">
               <div class="divname">
                 <p class="barname">{{ div.Name }}</p>
               </div>
               <div class="divcheck">
-                <input class="checkbox" type="checkbox" checked="True">
+                <input class="checkbox" type="checkbox" [checked]="selection[i]" (change)="seleccionarBarra(i)">
               </div>
             </div>
         </div>
         <button class="newbar" (click)="openModal()">Nueva Barra</button>
       </div>
-    </div>
-  </div>
 
   <div class="col-6" style="text-align:justify;">
     <div class="panel panel-inverse disable-draggable">

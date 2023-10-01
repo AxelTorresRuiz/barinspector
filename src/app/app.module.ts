@@ -28,6 +28,7 @@ import { AddmanagerComponent } from './components/pages/addmanager/addmanager.co
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,4 +63,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
