@@ -4,13 +4,13 @@ import { Url } from "./const.api";
 
 var URLCompleta = Url + "/Bottle";
 export async function bottleGet(parametros: string = "") {
+    parametros = "?filter=DeleteAt eq null" + parametros;
     let bottle = {};
     await fetch(URLCompleta + parametros)
         .then(response => response.json())
         .then(data => {
             // Aquí convertirás la respuesta a una instancia de la interfaz "Bottle"
             bottle = data["value"] as Bottle[];
-            console.info(bottle);
         })
         .catch(error => {
             // Manejo de errores

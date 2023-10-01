@@ -6,6 +6,9 @@ import { bottleGet, bottlePost, bottlePut } from 'src/app/services/api/Bottle.se
 import { Bottle } from 'src/app/services/api/Bottle.model';
 import { BarBottle } from 'src/app/services/api/BarBottle.model';
 import { ChartType, ChartOptions, ChartDataset } from 'chart.js';
+import { barBottleGet } from 'src/app/services/api/BarBottle.service';
+import { convertirAOzString } from 'src/app/services/api/const.api';
+import { obtenerBarraActiva } from 'src/app/services/api/Bar.service';
 
 @Component({
   selector: 'app-mybar',
@@ -18,14 +21,28 @@ import { ChartType, ChartOptions, ChartDataset } from 'chart.js';
 
 export class MybarComponent implements OnInit {
   
+  barBottlesYBotella: any[] = [];
+  async obtenerDatosIniciales() {
+    var barraActiva = await obtenerBarraActiva();
+    
+    var barBottles: BarBottle[] = await barBottleGet(" and BarId eq "+barraActiva.Id) as BarBottle[];
+    for (var i = 0; i < barBottles.length; i++) {
+      var bottle: Bottle = (await bottleGet(" and Id eq " + barBottles[i].BottleId) as Bottle[])[0];
+      this.barBottlesYBotella.push({ barBottle: barBottles[i], bottle:bottle})
+    }
+    this.barBottlesYBotella=this.barBottlesYBotella;
+  }
+  convertirAOzString(litros:number):string{
+    return convertirAOzString(litros)
+  }
 
-  public pieChartOptions: ChartOptions ={
+  public pieChartOptions: ChartOptions = {
     responsive: true,
   };
-  public pieChartData: ChartDataset[]=[
+  public pieChartData: ChartDataset[] = [
     {
-      data:[24,4],
-      backgroundColor:['#F8F0E5', '#0F2C59'],
+      data: [24, 4],
+      backgroundColor: ['#F8F0E5', '#0F2C59'],
       borderColor: ['#001524', '#001524'], // Border colors for the datasets
       borderWidth: 1 // Border width in pixels
     },
@@ -35,15 +52,16 @@ export class MybarComponent implements OnInit {
 
 
 
-  constructor(private pageTitleService:PagetitleService, private router:Router, private bascula: BasculaService ){
+  constructor(private pageTitleService: PagetitleService, private router: Router, private bascula: BasculaService) {
   }
 
-  agregar(){
+  agregar() {
     this.router.navigate(['/catalogue'])
   }
 
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Mi barra')
+    this.obtenerDatosIniciales()
   }
 
 

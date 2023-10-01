@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-md-7">
           <p class="botellatxt">{{bottle.Name}}</p>
-          <button class="btnml">{{bottle.Presentacion}}</button>
+          <button class="btnml">{{(bottle.Presentacion*33.814).toFixed(2)}} oz</button>
         </div>
         <div class="col-md-5">
           <img class="img" [src]="'https://barinspector.com/api/bottle/'+bottle.Id+'/getimagen'" alt="botellon">

@@ -12,7 +12,7 @@ export class AddbottleComponent implements OnInit {
     name:'',
     liquor:'',
     sku:'',
-    presentacion:'',
+    presentacion:0,
     fullBottleWeight:0,
     emptyBottleWeight:0,
     weightPerOunce:0

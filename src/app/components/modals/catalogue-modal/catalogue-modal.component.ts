@@ -1,5 +1,9 @@
 import { Component,Inject,OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { obtenerBarraActiva } from 'src/app/services/api/Bar.service';
+import { BarBottle } from 'src/app/services/api/BarBottle.model';
+import { barBottlePost } from 'src/app/services/api/BarBottle.service';
+import { Bottle } from 'src/app/services/api/Bottle.model';
 import { BasculaService } from 'src/app/services/bascula.service';
 @Component({
   selector: 'app-catalogue-modal',
@@ -40,6 +44,16 @@ export class CatalogueModalComponent implements OnInit {
 
   closeModal(){
     this.dialogRef.close()
+  }
+
+  async agregarConPesoDeBasucula(){
+    var barra = await obtenerBarraActiva();
+    delete barra.id;
+    var bottle:BarBottle={Id:0, CurrentWeight:this.heightValue, CreatedAt:new Date(), UpdatedAt:new Date(), BarId:barra.Id, BottleId:this.data.botellaSeleccionada.Id}
+    if(bottle.CurrentWeight!=null && bottle.CurrentWeight>=0){
+      barBottlePost(bottle);
+    }
+    this.closeModal();
   }
 
 }

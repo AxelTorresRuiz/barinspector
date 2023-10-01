@@ -3,6 +3,9 @@ import { PagetitleService } from 'src/app/services/pagetitle.service';
 import {MatDialog} from '@angular/material/dialog'
 import { CatalogueModalComponent } from '../../modals/catalogue-modal/catalogue-modal.component';
 import { bottleGet } from 'src/app/services/api/Bottle.service';
+import { barBottleGet } from 'src/app/services/api/BarBottle.service';
+import { BarBottle } from 'src/app/services/api/BarBottle.model';
+import { Bottle } from 'src/app/services/api/Bottle.model';
 @Component({
   selector: 'app-catalogue',
   templateUrl: './catalogue.component.html',
@@ -14,6 +17,7 @@ export class CatalogueComponent {
 
   constructor(private pageTitleService:PagetitleService, public dialog: MatDialog){}
 
+  
 
   openModal(bottle: any){
     const dialogRef = this.dialog.open(CatalogueModalComponent,{

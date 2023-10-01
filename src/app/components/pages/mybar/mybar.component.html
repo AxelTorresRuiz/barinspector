@@ -1,57 +1,75 @@
+<div class="botones">
+  <button type="button" class="btn btn-outline-dark">Tequila</button>
+  <button type="button" class="btn btn-outline-dark">Whisky</button>
+  <button type="button" class="btn btn-outline-dark">Ron</button>
+  <button type="button" class="btn btn-outline-dark">Vodka</button>
+  <button type="button" class="btn btn-outline-dark">Ginebra</button>
+  <button type="button" class="btn btn-outline-dark">Brandy</button>
+  <button type="button" class="btn btn-outline-dark">Coñac</button>
+  <button type="button" class="btn btn-outline-dark">Otros</button>
+</div>
 
-  <div class="botones">
-    <button type="button"  class="btn btn-outline-dark">Tequila</button>
-    <button type="button"  class="btn btn-outline-dark">Whisky</button>
-    <button type="button"  class="btn btn-outline-dark">Ron</button>
-    <button type="button"  class="btn btn-outline-dark">Vodka</button>
-    <button type="button"  class="btn btn-outline-dark">Ginebra</button>
-    <button type="button"  class="btn btn-outline-dark">Brandy</button>
-    <button type="button"  class="btn btn-outline-dark">Coñac</button>
-    <button type="button"  class="btn btn-outline-dark">Otros</button>
-  </div>
 
-    
-      <div class="card col">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-8">
-              <p class="botellatxt">Jose Cuervo Tradicional Reposado</p>
-              <div style="display: flex;">
-                <div class="textos col-6">
-                    <p class="textonza">OZ.TOTAL</p>
-                    <p class="onzinput">24</p>
-                    <p class="textonza">OZ. RESTANTES</p>
-                    <p class="onzinput" style="color: red;">4</p>
-                    <p class="textonza">OZ. ALMACEN</p>
-                    <p class="onzinput">24</p>
-                  </div>
+<div class="card col">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-8">
+        <p class="botellatxt">Jose Cuervo Tradicional Reposado</p>
+        <div style="display: flex;">
+          <div class="textos col-6">
+            <p class="textonza">OZ.TOTAL</p>
+            <p class="onzinput">24</p>
+            <p class="textonza">OZ. RESTANTES</p>
+            <p class="onzinput" style="color: red;">4</p>
+            <p class="textonza">OZ. ALMACEN</p>
+            <p class="onzinput">24</p>
+          </div>
 
-                  <div class="grafica col-8" style="max-width: 200;">
-                    <canvas baseChart
-                            [datasets]="pieChartData"
-                            [type]="pieChartType"
-                            [options]="pieChartOptions">
-                    </canvas>
-                  </div>
-                </div>    
-            </div>
-            <div class="col-4">
-              <img class="img" src="../../../../assets/Imgbotellas/image 2.png" alt="botellon">
-              <button class="btnml">695ml</button>
-            </div>  
-            </div>
+          <div class="grafica col-8" style="max-width: 200;">
+            <canvas baseChart [datasets]="pieChartData" [type]="pieChartType" [options]="pieChartOptions">
+            </canvas>
+          </div>
         </div>
       </div>
+      <div class="col-4">
+        <img class="img" src="../../../../assets/Imgbotellas/image 2.png" alt="botellon">
+        <button class="btnml">695ml</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-      
-      
-      
+<div class="card col" *ngFor="let BarBottleYBotella of barBottlesYBotella">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-8">
+        <p class="botellatxt">{{BarBottleYBotella.bottle.Name}}</p>
+        <div style="display: flex;">
+          <div class="textos col-6">
+            <p class="textonza">OZ.TOTAL</p>
+            <p class="onzinput">24</p>
+            <p class="textonza">OZ. RESTANTES</p>
+            <p class="onzinput" style="color: red;">4</p>
+            <p class="textonza">OZ. ALMACEN</p>
+            <p class="onzinput">24</p>
+          </div>
 
-    <button class="add" (click)="agregar()">+</button>
-  
+          <div class="grafica col-8" style="max-width: 200;">
+            <canvas baseChart [datasets]="pieChartData" [type]="pieChartType" [options]="pieChartOptions">
+            </canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <img class="img" [src]="'https://barinspector.com/api/bottle/'+BarBottleYBotella.bottle.Id+'/getimagen'" alt="botellon">
+        <button class="btnml">{{convertirAOzString(BarBottleYBotella.bottle.Presentacion)}}</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-  
-    
-    
 
 
+
+
+<button class="add" (click)="agregar()">+</button>

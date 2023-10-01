@@ -4,6 +4,7 @@ import { Url } from "./const.api";
 
 var URLCompleta = Url + "/BarBottle";
 export async function barBottleGet(parametros: string="") {
+    parametros = "?$filter=DeleteAt eq null" + parametros; 
     let barBottle={};
     await fetch(URLCompleta + parametros)
         .then(response => response.json())

@@ -5,7 +5,7 @@ export interface Bottle {
     name: string;
     liquor?: string;
     sku?: string;
-    presentacion?: string;
+    presentacion?: number;
     fullBottleWeight: number;
     emptyBottleWeight: number;
     weightPerOunce: number;
