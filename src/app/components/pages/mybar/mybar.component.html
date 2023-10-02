@@ -51,7 +51,7 @@
             <p class="textonza">OZ. RESTANTES</p>
             <p class="onzinput" style="color: red;">4</p>
             <p class="textonza">OZ. ALMACEN</p>
-            <p class="onzinput">24</p>
+            <p class="onzinput">{{(BarBottleYBotella.bottle.WeightPerOunce*(BarBottleYBotella.barBottle.CurrentWeight-BarBottleYBotella.bottle.EmptyBottleWeight/1000)).toFixed(2)}} oz</p>
           </div>
 
           <div class="grafica col-8" style="max-width: 200;">
