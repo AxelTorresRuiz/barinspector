@@ -51,7 +51,7 @@ export class ConfigurationComponent implements OnInit {
   async actualizarBarras() {
     this.barras = await barGet() as Bar[];
   }
-  barraActiva: any = null;
+  barraActiva: Bar = {Id:-1, Name:"Seleciona una"};
   barras: Bar[] = [];
 
   ngOnInit(): void {
@@ -59,9 +59,11 @@ export class ConfigurationComponent implements OnInit {
     this.actualizarBarras().then(() => {
       this.selection = Array(this.barras.length).fill(false);
       obtenerBarraActiva().then((r) => {
-        this.barraActiva = r;
-        delete this.barraActiva.id;
+        this.barraActiva = r as Bar;
         this.cualBarra();
+      }).catch(()=>{
+        console.log("No hay ninguna barra activa");
+        
       });
     });
   }
