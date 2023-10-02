@@ -42,7 +42,7 @@ export class MybarComponent implements OnInit {
   public pieChartData: ChartDataset[] = [
     {
       data: [24, 4],
-      backgroundColor: ['#F8F0E5', '#0F2C59'],
+      backgroundColor: ['GREEN', 'RED'],
       borderColor: ['#001524', '#001524'], // Border colors for the datasets
       borderWidth: 1 // Border width in pixels
     },
