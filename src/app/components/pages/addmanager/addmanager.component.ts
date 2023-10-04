@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/services/api/User.model';
+import { userGet, userPost } from 'src/app/services/api/User.service';
 import { PagetitleService } from 'src/app/services/pagetitle.service';
 @Component({
   selector: 'app-addmanager',
@@ -6,10 +8,24 @@ import { PagetitleService } from 'src/app/services/pagetitle.service';
   styleUrls: ['./addmanager.component.css']
 })
 export class AddmanagerComponent implements OnInit {
+  user:User={Id:0, Name:"", LastName:"", Role:"", Slug:"", CreatedAt:new Date(), UpdatedAt:new Date()}
+  LastNameFather = "";
+  LastNameMother = "";
+
+  LastName(){
+    this.user.LastName=this.LastNameFather + " " + this.LastNameMother;
+  }
+
+  saveUser(){
+    userPost(this.user);
+  }
 
   constructor(private pagetitle:PagetitleService){}
 
   ngOnInit(): void {
       this.pagetitle.setPageTitle('Añadir Encargado')
+      userGet().then(r=>{
+        console.log(r)
+      })
   }
 }

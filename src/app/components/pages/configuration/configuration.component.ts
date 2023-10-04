@@ -51,7 +51,7 @@ export class ConfigurationComponent implements OnInit {
   async actualizarBarras() {
     this.barras = await barGet() as Bar[];
   }
-  barraActiva: Bar = {Id:-1, Name:"Seleciona una"};
+  barraActiva: Bar = {Id:-1, Name:"Seleciona una Barra"};
   barras: Bar[] = [];
 
   ngOnInit(): void {
