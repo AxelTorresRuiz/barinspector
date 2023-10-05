@@ -10,34 +10,6 @@
 </div>
 
 
-<div class="card col">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-8">
-        <p class="botellatxt">Jose Cuervo Tradicional Reposado</p>
-        <div style="display: flex;">
-          <div class="textos col-6">
-            <p class="textonza">OZ.TOTAL</p>
-            <p class="onzinput">24</p>
-            <p class="textonza">OZ. RESTANTES</p>
-            <p class="onzinput" style="color: red;">4</p>
-            <p class="textonza">OZ. ALMACEN</p>
-            <p class="onzinput">24</p>
-          </div>
-
-          <div class="grafica col-8" style="max-width: 200;">
-            <canvas baseChart [datasets]="pieChartData" [type]="pieChartType" [options]="pieChartOptions">
-            </canvas>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <img class="img" src="../../../../assets/Imgbotellas/image 2.png" alt="botellon">
-        <button class="btnml">695ml</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="card col" *ngFor="let BarBottleYBotella of barBottlesYBotella">
   <div class="card-body">
@@ -46,11 +18,9 @@
         <p class="botellatxt">{{BarBottleYBotella.bottle.Name}}</p>
         <div style="display: flex;">
           <div class="textos col-6">
-            <p class="textonza">OZ.TOTAL</p>
-            <p class="onzinput">24</p>
-            <p class="textonza">OZ. RESTANTES</p>
-            <p class="onzinput" style="color: red;">4</p>
-            <p class="textonza">OZ. ALMACEN</p>
+            <p class="textonza">RESTANTE DE BOTELLA</p>
+            <p class="onzinput" style="color: red;">4 oz</p>
+            <p class="textonza">DISPONIBLE EN BARRA</p>
             <p class="onzinput">{{(BarBottleYBotella.bottle.WeightPerOunce*(BarBottleYBotella.barBottle.CurrentWeight-BarBottleYBotella.bottle.EmptyBottleWeight/1000)).toFixed(2)}} oz</p>
           </div>
 
