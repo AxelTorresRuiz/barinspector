@@ -45,4 +45,18 @@
         </div>
     </div>
 
+    <div class="card col" *ngFor="let user of users">
+        <div class="sup">
+            <img class="imagen" [src]="'https://barinspector.com/api/User/' + user.Id + '/GetImagen'" alt="">
+        </div>
+        <div class="inf">
+            <p class="name">{{user.Name}}</p>
+            <p class="textprim">Puesto</p>
+            <p class="textse">{{user.Role}}</p>
+            <p class="textprim">Numero</p>
+            <p class="textse">{{user.Phone}}</p>
+            <img class="botellas" src="../../../../assets/copas.png" alt="">
+        </div>
+    </div>
+
     <button class="add" (click)="add()">+</button>
