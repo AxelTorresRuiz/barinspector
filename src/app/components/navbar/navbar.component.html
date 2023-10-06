@@ -1,7 +1,7 @@
 <div class="grid-container">
     <div class="rojo">
         <div class="sidebarsup">
-            <h1 class="barname">Mi barra</h1>
+            <h1 class="barname">{{barraActiva?.Name}}</h1>
         </div>
         <div class="sidebarinf">
             
@@ -66,7 +66,7 @@
     <div class="azul">
         <div class="verde">
             <div class="headersup">
-                <h1 class="title">{{getPageTitle()}}</h1>
+                <h1 class="title">{{ (barraActiva?.Name === 'Mi barra') ? barraActiva?.Name : getPageTitle() }}</h1>
             </div>
             <div class="headerinf">
                 <div class="btn"><button class="boton" (click)="myBar()">Botellas</button></div>
