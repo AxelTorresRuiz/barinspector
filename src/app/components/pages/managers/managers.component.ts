@@ -3,6 +3,7 @@ import { PagetitleService } from 'src/app/services/pagetitle.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/services/api/User.model';
 import { userGet } from 'src/app/services/api/User.service';
+import { setWeight } from 'src/app/services/bascula.service';
 @Component({
   selector: 'app-managers',
   templateUrl: './managers.component.html',

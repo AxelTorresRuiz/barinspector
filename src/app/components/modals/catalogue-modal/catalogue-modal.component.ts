@@ -4,7 +4,7 @@ import { obtenerBarraActiva } from 'src/app/services/api/Bar.service';
 import { BarBottle } from 'src/app/services/api/BarBottle.model';
 import { barBottlePost } from 'src/app/services/api/BarBottle.service';
 import { Bottle } from 'src/app/services/api/Bottle.model';
-import { BasculaService } from 'src/app/services/bascula.service';
+import { BasculaService, getWeight, setWeight } from 'src/app/services/bascula.service';
 @Component({
   selector: 'app-catalogue-modal',
   templateUrl: './catalogue-modal.component.html',
@@ -39,6 +39,12 @@ export class CatalogueModalComponent implements OnInit {
     this.bascula.getWeightObservable().subscribe(weight=>{
       this.heightValue = weight;
     })
+    setInterval(this.obtenerPeso,100)
+  }
+
+  peso:number=0;
+  async obtenerPeso(){
+    this.peso = await getWeight();
   }
 
 
