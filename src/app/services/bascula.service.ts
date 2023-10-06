@@ -41,8 +41,8 @@ export class BasculaService {
 
   export async function setWeight(puerto:string, baudio:string){
     let formData = new FormData();
-    formData.append("port_name", "COM1");
-    formData.append("baud_rate", "9600");
+    formData.append("port_name", puerto);
+    formData.append("baud_rate", baudio);
 
     var respuesta = await fetch('http://127.0.0.1:5000/com_value', {
       method: 'POST',
