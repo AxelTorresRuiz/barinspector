@@ -26,6 +26,7 @@ import { NewbarModalComponent } from './components/modals/newbar-modal/newbar-mo
 import { AddbottleComponent } from './components/pages/addbottle/addbottle.component';
 import { AddmanagerComponent } from './components/pages/addmanager/addmanager.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ConfigureScaleComponent } from './components/pages/configure-scale/configure-scale.component';
 
 
 
@@ -44,7 +45,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NewbarModalComponent,
     AddbottleComponent,
     AddmanagerComponent,
-    NavbarComponent
+    NavbarComponent,
+    ConfigureScaleComponent
   ],
   imports: [
     BrowserModule,

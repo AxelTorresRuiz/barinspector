@@ -1,0 +1,6 @@
+
+<select [(ngModel)]="puertoSeleccionado" (change)="enviar()">
+    <option *ngFor="let item of puertosLista" [value]="item">{{ item }}</option>
+</select>
+<input type="number" [(ngModel)]="velocidad" placeholder="Baudio" (change)="enviar()">
+<p>{{pesoObtenido}}</p>

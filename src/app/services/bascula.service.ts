@@ -35,7 +35,11 @@ export class BasculaService {
     return convertWeight(respuesta.value);
   }
 
-  export async function setWeight(){
+  export async function portsList() {
+    return (await fetch('http://127.0.0.1:5000/com_ports').then(r=>r.json())).ports;
+  }
+
+  export async function setWeight(puerto:string, baudio:string){
     let formData = new FormData();
     formData.append("port_name", "COM1");
     formData.append("baud_rate", "9600");
