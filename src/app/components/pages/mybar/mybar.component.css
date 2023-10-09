@@ -85,14 +85,13 @@
 }
 
 .img{
-  width: 4.375rem;
-  height: 9.3125rem;
+  width: 9.375rem;
+  height: 9.375rem;
   flex-shrink: 0;
   position:relative;
-  left: 1.5rem;
-  margin-left: .2rem;
-  margin-top: 3.2rem;
-  
+  margin-left: 1rem;
+  margin-top: 1.6rem;
+
 }
 
 .textonza{
