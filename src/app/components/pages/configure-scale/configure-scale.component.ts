@@ -27,6 +27,7 @@ export class ConfigureScaleComponent implements OnInit {
   async obtenerPuertos() {
     this.puertosLista = await portsList();
     try {
+
       var config = await obtenerConfiguracionBascula();
       this.puertoSeleccionado = config['puerto'];
       this.velocidad = config['velocidad'];
@@ -55,7 +56,7 @@ export class ConfigureScaleComponent implements OnInit {
         this.pesoObtenido = await getWeight();
         console.info(this.velocidad);
       } catch (error) { }
-      
+
       await this.sleep(1000);
     }
   }

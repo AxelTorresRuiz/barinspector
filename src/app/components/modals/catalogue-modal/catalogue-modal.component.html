@@ -13,14 +13,6 @@
         <img class="img" [src]="'https://barinspector.com/api/bottle/'+data.botellaSeleccionada.Id+'/getimagen'"
           alt="botellon.png">
       </div>
-      <div>
-        <button (click)="tglButton('btn1')" [ngClass]="{'active': btn1active}" class="oz">1 O</button>
-        <button (click)="tglButton('btn2')" [ngClass]="{'active': btn2active}" class="oz">1 1/2 Oz</button>
-      </div>
-      <div>
-        <p class="oztext">Selecciona el modo de servir el producto (este dato afectara los resultados de las auditorias)
-        </p>
-      </div>
     </div>
 
     <div class="right col-md-6">

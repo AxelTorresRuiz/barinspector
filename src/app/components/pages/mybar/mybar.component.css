@@ -10,8 +10,8 @@
   background: #FFF;
   display: inline-block;
   white-space: normal;
-  word-wrap: break-word; 
-  overflow: hidden; 
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 @media(min-with:1200px){
@@ -74,14 +74,18 @@
 
 .btnml{
   width: 5.3125rem;
-  height: 1.9375rem;
+  height: 2.9375rem;
   flex-shrink: 0;
   border-radius: 1.875rem;
   border: 1px solid #000;
   background: rgba(217, 217, 217, 0.00);
   position: relative;
   left: 1.5rem;
-  margin-top: 1rem;
+  margin-top: .5rem;
+}
+.btnml:hover{
+  background: #AB094D;
+  color: white;
 }
 
 .img{
@@ -90,7 +94,7 @@
   flex-shrink: 0;
   position:relative;
   margin-left: 1rem;
-  margin-top: 1.6rem;
+  margin-top: .5rem;
 
 }
 
@@ -101,11 +105,12 @@
   font-style: normal;
   line-height: normal;
   margin: 0;
+  margin-top: 2rem;
 }
 
 .onzinput{
-  width: 5.3125rem;
-  height: 1.9375rem;
+  width: 6.3125rem;
+  height: 2.5rem;
   flex-shrink: 0;
   border-radius: 1.875rem;
   border: 1px solid #000;
@@ -125,5 +130,11 @@
   margin: 0;
   padding: 0;
   left: 0;
-
+}
+.textnum{
+  font-family: Inter;
+  font-size: 1rem;
+  position: relative;
+  margin-left: 6rem;
+  margin-top: .5rem;
 }

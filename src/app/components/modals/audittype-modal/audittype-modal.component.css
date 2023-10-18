@@ -1,0 +1,54 @@
+.principal{
+  width: 41.875rem;
+  height: 27.25rem;
+  flex-shrink: 0;
+  text-align: center;
+}
+.body1{
+  display: block;
+
+}
+.body2{
+  display: block;
+}
+
+.header{
+    width: 41.875rem;
+    height: 4.31681rem;
+    flex-shrink: 0;
+    background-color: #4B4540;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 2.5rem;
+    font-style: normal;
+    line-height: normal;
+}
+
+.text{
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 3rem;
+}
+
+.btn{
+  width: 13.0625rem;
+  height: 4rem;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+  background: #AB094D;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 1rem;
+  margin: 3rem;
+}

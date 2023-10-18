@@ -8,6 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import {ButtonModule} from 'primeng/button'
+import {CalendarModule} from 'primeng/calendar'
+import {DropdownModule} from 'primeng/dropdown'
+import {TableModule} from 'primeng/table'
 
 import { MybarComponent } from './components/pages/mybar/mybar.component';
 import { AuditComponent } from './components/pages/audit/audit.component';
@@ -26,6 +30,9 @@ import { AddbottleComponent } from './components/pages/addbottle/addbottle.compo
 import { AddmanagerComponent } from './components/pages/addmanager/addmanager.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ConfigureScaleComponent } from './components/pages/configure-scale/configure-scale.component';
+import { AudittypeModalComponent } from './components/modals/audittype-modal/audittype-modal.component';
+import { AuditscanModalComponent } from './components/modals/auditscan-modal/auditscan-modal.component';
+import { AuditModalComponent } from './components/modals/audit-modal/audit-modal.component';
 
 
 
@@ -45,7 +52,11 @@ import { ConfigureScaleComponent } from './components/pages/configure-scale/conf
     AddbottleComponent,
     AddmanagerComponent,
     NavbarComponent,
-    ConfigureScaleComponent
+    ConfigureScaleComponent,
+    AudittypeModalComponent,
+    AuditscanModalComponent,
+    AuditModalComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -54,15 +65,19 @@ import { ConfigureScaleComponent } from './components/pages/configure-scale/conf
     BrowserAnimationsModule,
     MatDialogModule,
     FormsModule,
-    NgChartsModule
+    NgChartsModule,
+    ButtonModule,
+    CalendarModule,
+    DropdownModule,
+    TableModule
 
   ],
   providers: [
     PagetitleService,
-    
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
+export class AppModule {
+
 }

@@ -18,8 +18,6 @@
         <p class="botellatxt">{{BarBottleYBotella.bottle.Name}}</p>
         <div style="display: flex;">
           <div class="textos col-6">
-            <p class="textonza">RESTANTE DE BOTELLA</p>
-            <p class="onzinput" style="color: red;">4 oz</p>
             <p class="textonza">DISPONIBLE EN BARRA</p>
             <p class="onzinput">{{(BarBottleYBotella.bottle.WeightPerOunce*(BarBottleYBotella.barBottle.CurrentWeight-BarBottleYBotella.bottle.EmptyBottleWeight/1000)).toFixed(2)}} oz</p>
           </div>
@@ -31,8 +29,9 @@
         </div>
       </div>
       <div class="col-4">
+        <p class="textnum">1</p>
         <img class="img" [src]="'https://barinspector.com/api/bottle/'+BarBottleYBotella.bottle.Id+'/getimagen'" alt="botellon">
-        <button class="btnml">{{convertirAOzString(BarBottleYBotella.bottle.Presentacion)}}</button>
+        <button class="btnml">{{convertirAOzString(BarBottleYBotella.bottle.Presentacion)}}, {{(BarBottleYBotella.bottle.Presentacion)*1000}}ml</button>
       </div>
     </div>
   </div>

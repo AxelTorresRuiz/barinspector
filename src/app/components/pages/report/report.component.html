@@ -1,1 +1,70 @@
-<p>Pantalla de Reportes</p>
+<div class="botones">
+  <div class="cosas">
+    <p class="text">Fecha Inicial</p>
+    <p-calendar [(ngModel)]="date" [showIcon]="true"></p-calendar>
+  </div>
+  <div class="cosas">
+    <p class="text">Fecha Final</p>
+    <p-calendar [(ngModel)]="date" [showIcon]="true"></p-calendar>
+  </div>
+  <div class="cosas">
+    <p class="text">Tipo de Licor</p>
+    <select class="drop" name="Buscar" id="">
+      <option [value]="null">Buscar</option>
+      <option value="liquor">Tequila</option>
+      <option value="liquor">Ron</option>
+      <option value="liquor">Gin</option>
+      <option value="liquor">Whisky</option>
+    </select>
+  </div>
+  <div class="cosas">
+    <p class="text">Producto</p>
+    <select class="drop" name="Buscar" id="">
+      <option [value]="null">Buscar</option>
+      <option value="liquor">Jack Daniels</option>
+      <option value="liquor">Jose Cuervo Tradicional</option>
+      <option value="liquor">Licor 43</option>
+
+
+    </select>
+  </div>
+  <div class="cosas">
+    <p class="text">Encargado</p>
+    <select class="drop" name="Buscar" id="">
+      <option [value]="null">Buscar</option>
+      <option value="liquor">Victor Reyes</option>
+      <option value="liquor">Axel Torres</option>
+      <option value="liquor">Amed Limas</option>
+      <option value="liquor">Miguel Emobile</option>
+    </select>
+  </div>
+  <div class="cosas">
+    <button class="boton">Buscar</button>
+  </div>
+</div>
+<div class="card">
+  <p-table class="custom-table">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Producto</th>
+        <th>Peso Actual</th>
+        <th>Oz. Vendidas</th>
+        <th>Oz. Faltantes</th>
+        <th>Porcentaje Restante</th>
+        <th>Fecha ult Actualizacion</th>
+        <th>Encargado</th>
+      </tr>
+    </ng-template>
+    <ng-template>
+      <tr>
+        <td>Jack daniels</td>
+        <td>10</td>
+        <td>10</td>
+        <td>20%</td>
+        <td>20/12/2023</td>
+        <td>20/12/2023</td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+</div>

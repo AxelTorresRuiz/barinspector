@@ -1,1 +1,30 @@
-<p>audit works!</p>
+<div class="botones">
+  <button class="btn">Tequila</button>
+  <button class="btn">Whisky</button>
+  <button class="btn">Ron</button>
+  <button class="btn">Vodka</button>
+  <button class="btn">Ginebra</button>
+  <button class="btn">Brandy</button>
+  <button class="btn">Coñac</button>
+  <button class="btn">Otros</button>
+  <button class="btnAudit" (click)="openDialog()">Iniciar Auditoria</button>
+</div>
+<div class="card">
+  <p-table class="custom-table">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Producto</th>
+        <th>Peso Actual</th>
+        <th>Oz. Aproximadas</th>
+        <th>Porcentaje Restante</th>
+        <th>Fecha ult Actualizacion</th>
+        <th>Encargado ultima Auditoria</th>
+      </tr>
+    </ng-template>
+    <ng-template>
+      <tr>
+        <td></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
