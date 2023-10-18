@@ -1,13 +1,12 @@
-import { Injectable } from '@angular/core';
-import * as signalR from '@microsoft/signalr';
-import { Observable, Subject } from 'rxjs';
-
+/*
 @Injectable({
   providedIn: 'root'
 })
 export class BasculaService {
   private hubConnection: signalR.HubConnection;
   private weightSubject = new Subject<number>();
+  
+  
   constructor() {
 
     this.hubConnection = new signalR.HubConnectionBuilder()
@@ -29,7 +28,7 @@ export class BasculaService {
     return this.weightSubject.asObservable();
   }
 
-}
+}*/
   export async function getWeight() {
     var respuesta = await fetch('http://127.0.0.1:5000/com_value').then(r=>r.json());
     return convertWeight(respuesta.value);

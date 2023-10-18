@@ -15,3 +15,7 @@ export function convertirAOz(litros:number):number{
 export function convertirAOzString(litros:number, decimales:number=2):string{
     return convertirAOz(litros).toFixed(decimales)+" oz";
 }
+
+export function sleep(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
