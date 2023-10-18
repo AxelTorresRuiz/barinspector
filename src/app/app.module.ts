@@ -19,7 +19,6 @@ import { CatalogueComponent } from './components/pages/catalogue/catalogue.compo
 import { APP_ROUTING } from './app.routes';
 import { ConfigurationComponent } from './components/pages/configuration/configuration.component';
 import { PagetitleService } from './services/pagetitle.service';
-import { BasculaService } from './services/bascula.service';
 import { CatalogueModalComponent } from './components/modals/catalogue-modal/catalogue-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewbarModalComponent } from './components/modals/newbar-modal/newbar-modal.component';
@@ -60,7 +59,6 @@ import { ConfigureScaleComponent } from './components/pages/configure-scale/conf
   ],
   providers: [
     PagetitleService,
-    BasculaService
     
   ],
   bootstrap: [AppComponent]

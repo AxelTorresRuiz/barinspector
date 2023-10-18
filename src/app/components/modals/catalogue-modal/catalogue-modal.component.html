@@ -10,11 +10,12 @@
         <p class="text">{{data.botellaSeleccionada.Name}}</p>
       </div>
       <div>
-        <img class="img" [src]="'https://barinspector.com/api/bottle/'+data.botellaSeleccionada.Id+'/getimagen'" alt="botellon.png">
+        <img class="img" [src]="'https://barinspector.com/api/bottle/'+data.botellaSeleccionada.Id+'/getimagen'"
+          alt="botellon.png">
       </div>
       <div>
-        <button (click)="tglButton('btn1')" [ngClass]="{'active': btn1active}"  class="oz">1 O</button>
-        <button (click)="tglButton('btn2')" [ngClass]="{'active': btn2active}"  class="oz">1 1/2 Oz</button>
+        <button (click)="tglButton('btn1')" [ngClass]="{'active': btn1active}" class="oz">1 O</button>
+        <button (click)="tglButton('btn2')" [ngClass]="{'active': btn2active}" class="oz">1 1/2 Oz</button>
       </div>
       <div>
         <p class="oztext">Selecciona el modo de servir el producto (este dato afectara los resultados de las auditorias)
@@ -27,7 +28,8 @@
         <p class="text">Selecciona el tamaño</p>
       </div>
       <div>
-        <button (click)="toggleButton('button1')" [ngClass]="{'active': button1Active}" class="custom-button">{{(data.botellaSeleccionada.Presentacion*33.814).toFixed(2)}} oz</button>
+        <button (click)="toggleButton('button1')" [ngClass]="{'active': button1Active}"
+          class="custom-button">{{(data.botellaSeleccionada.Presentacion*33.814).toFixed(2)}} oz</button>
       </div>
       <div>
         <label class="peso" for="weightInput">Peso:</label>
@@ -37,7 +39,9 @@
         <button class="btnmodal" onclick="">Botella Nueva</button>
         <button class="btnmodal" (click)="agregarConPesoDeBasucula()">Agregar</button>
       </div>
+      <div>
+        <button>1</button>
+      </div>
     </div>
-
   </div>
 </div>
