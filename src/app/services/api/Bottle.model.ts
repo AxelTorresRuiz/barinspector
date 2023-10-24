@@ -1,18 +1,18 @@
 import { BarBottle } from "./BarBottle.model";
 
 export interface Bottle {
-    id?: number;
-    name: string;
-    liquor?: string;
-    sku?: string;
-    presentacion?: number;
-    fullBottleWeight: number;
-    emptyBottleWeight: number;
-    weightPerOunce: number;
-    slug?: string;
-    createdAt?: Date;
-    updatedAt?: Date;
-    deleteAt?: Date;
-    image?: string;
+    Id?: number;
+    Name: string;
+    Liquor?: string;
+    SKU?: string;
+    Presentacion?: number;
+    FullBottleWeight: number;
+    EmptyBottleWeight: number;
+    WeightPerOunce: number;
+    Slug?: string;
+    CreatedAt?: Date;
+    UpdatedAt?: Date;
+    DeleteAt?: Date;
+    Image?: string;
     BarBottle?: BarBottle[];
 }

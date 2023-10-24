@@ -11,5 +11,6 @@ export interface BarBottle {
     BottleId: number;
     Bottle?: Bottle;
     BarId: number;
-    Bar?: Bar
+    Bar?: Bar;
+    CantidadDeServir?: number;
   }

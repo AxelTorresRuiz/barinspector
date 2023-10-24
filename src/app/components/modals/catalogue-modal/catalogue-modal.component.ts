@@ -4,8 +4,9 @@ import { obtenerBarraActiva } from 'src/app/services/api/Bar.service';
 import { BarBottle } from 'src/app/services/api/BarBottle.model';
 import { barBottlePost } from 'src/app/services/api/BarBottle.service';
 import { Bottle } from 'src/app/services/api/Bottle.model';
-import { obtenerConfiguracionBascula } from 'src/app/services/api/Configuracion.service';
-import { sleep } from 'src/app/services/api/const.api';
+import { bottleGet, obtenerOz } from 'src/app/services/api/Bottle.service';
+import { configurarBascula, obtenerConfiguracionBascula } from 'src/app/services/api/Configuracion.service';
+import { convertirAOzString, sleep } from 'src/app/services/api/const.api';
 import { getWeight, setWeight } from 'src/app/services/bascula.service';
 @Component({
   selector: 'app-catalogue-modal',
@@ -18,7 +19,7 @@ export class CatalogueModalComponent implements OnInit {
 
   button1Active: boolean = false;
   button2Active: boolean = false;
-  btn1active: boolean = false;
+  btn1active: boolean = true;
   btn2active: boolean = false;
 
   toggleButton(button: string): void {
@@ -29,17 +30,23 @@ export class CatalogueModalComponent implements OnInit {
     }
   }
 
-  tglButton(button: string): void {
+  tglButton(button: string): void {/*
     if (button === 'btn1') {
       this.btn1active = !this.btn1active;
     } else if (button === 'btn2') {
       this.btn2active = !this.btn2active;
+    }*/
+    
+    if(this.btn1active){
+      this.btn1active=false;
+      this.btn2active=true;
+    }else{
+      this.btn2active=false;
+      this.btn1active=true;
     }
   }
   ngOnInit() {
-
     this.obtenerPuertos();
-    this.obtenerPeso();
   }
 
   ejectuandose:boolean = true;
@@ -52,19 +59,29 @@ export class CatalogueModalComponent implements OnInit {
       await sleep(0);//en caso de error o un uso excesivo de memoria poner a 1 segundo
     }
   }
+  
+  pesoAcumulado:number=0;
+  botellas:number[]=[];
+  addBotella(){
+    this.botellas.push(this.heightValue);
+    console.log(this.botellas.length)
+    this.pesoAcumulado=this.botellas.reduce((acumulador, valorActual) => acumulador + valorActual, 0) - (this.data.botellaSeleccionada.EmptyBottleWeight*this.botellas.length);
+  }
 
+  botella:Bottle | null=null;
   puertoSeleccionado: string | null = null;
-  velocidad: number | null = null;
+  velocidad: string | null = null;
   async obtenerPuertos() {
     try {
       var config = await obtenerConfiguracionBascula();
       this.puertoSeleccionado = config['puerto'];
-      this.velocidad = config['velocidad'];
+      this.velocidad = config['velocidad'] + "";
+      await setWeight(this.puertoSeleccionado, this.velocidad);
     } catch (e) { }
     this.obtenerPeso()
   }
 
-
+  
   closeModal() {
     this.dialogRef.close();
     this.ejectuandose=false;
@@ -73,11 +90,21 @@ export class CatalogueModalComponent implements OnInit {
   async agregarConPesoDeBasucula() {
     var barra = await obtenerBarraActiva();
     delete barra.id;
-    var bottle: BarBottle = { Id: 0, CurrentWeight: this.heightValue, CreatedAt: new Date(), UpdatedAt: new Date(), BarId: barra.Id, BottleId: this.data.botellaSeleccionada.Id }
+    var ml:number = 29.573529;
+    if(this.btn2active){
+      ml = ml*1.5;
+    }
+    var bottle: BarBottle = { Id: 0, CurrentWeight: this.heightValue + this.pesoAcumulado, CreatedAt: new Date(), UpdatedAt: new Date(), BarId: barra.Id, BottleId: this.data.botellaSeleccionada.Id, CantidadDeServir:ml }
     if (bottle.CurrentWeight != null && bottle.CurrentWeight >= 0) {
+      this.botellas.push(this.pesoAcumulado + this.heightValue);
       barBottlePost(bottle);
     }
     this.closeModal();
   }
+
+  obtenerOz(bottle:Bottle, peso:number):string{
+    return obtenerOz(bottle, peso).toFixed(2);
+  }
+
 
 }

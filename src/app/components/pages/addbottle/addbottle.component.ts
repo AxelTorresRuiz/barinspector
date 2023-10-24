@@ -9,13 +9,13 @@ import { bottlePost } from 'src/app/services/api/Bottle.service';
 })
 export class AddbottleComponent implements OnInit {
   bottle:Bottle={
-    name:'',
-    liquor:'',
-    sku:'',
-    presentacion:0,
-    fullBottleWeight:0,
-    emptyBottleWeight:0,
-    weightPerOunce:0
+    Name:'',
+    Liquor:'',
+    SKU:'',
+    Presentacion:0,
+    FullBottleWeight:0,
+    EmptyBottleWeight:0,
+    WeightPerOunce:0
   }
   constructor(private pagetitleservice:PagetitleService){}
   

@@ -9,3 +9,4 @@ export interface Bar {
     DeletedAt?: string;
     barBottles?: BarBottle[];
   }
+
