@@ -6,8 +6,7 @@ import { NgChartsModule } from 'ng2-charts';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+
 import {ButtonModule} from 'primeng/button'
 import {CalendarModule} from 'primeng/calendar'
 import {DropdownModule} from 'primeng/dropdown'
@@ -39,8 +38,6 @@ import { AuditModalComponent } from './components/modals/audit-modal/audit-modal
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SidebarComponent,
     MybarComponent,
     AuditComponent,
     ManagersComponent,
