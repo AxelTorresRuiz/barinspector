@@ -5,6 +5,7 @@
   </div>
 
   <div class="body">
+
     <div class="left col-md-6">
       <div>
         <p class="text">{{data.botellaSeleccionada.Name}}</p>
@@ -16,24 +17,30 @@
     </div>
 
     <div class="right col-md-6">
+
       <div>
         <p class="text">Selecciona el tamaño</p>
       </div>
+
       <div>
         <button (click)="toggleButton('button1')" [ngClass]="{'active': button1Active}"
           class="custom-button">{{(data.botellaSeleccionada.Presentacion*33.814).toFixed(2)}} oz</button>
       </div>
+
       <div>
         <label class="peso" for="weightInput">Peso:</label>
         <input class="inputtext" type="text" id="weightInput" [(ngModel)]="heightValue">
       </div>
+
       <div class="buttons">
         <button class="btnmodal" onclick="">Botella Nueva</button>
         <button class="btnmodal" (click)="agregarConPesoDeBasucula()">Agregar</button>
       </div>
+
       <div>
         <button>1</button>
       </div>
+
     </div>
   </div>
 </div>
