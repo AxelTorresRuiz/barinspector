@@ -1,1 +1,38 @@
-<p>audit-modal works!</p>
+<div class="principal">
+  <div class="header">
+    Auditar
+    <p class="close-modal" (click)="closeModal()">X</p>
+  </div>
+  <div class="body">
+
+    <div class="left col-md-4">
+      <div>
+        <p class="text">Tequila José Cuervo Tradicional Plata</p>
+      </div>
+      <div>
+        <img src="../../../../assets/botella.png" alt="" class="img">
+      </div>
+    </div>
+
+    <div class="right col-md-8">
+      <div>
+        <p class="txt">Peso</p>
+      </div>
+      <div>
+        <input type="text" class="inputweight">
+      </div>
+      <div>
+        <button class="btn">Botella Vacia</button>
+      </div>
+      <div style="display: flex;">
+        <p class="text">Cant. Botellas</p>
+        <input type="text" class="inputbottle">
+      </div>
+      <div class="botones">
+        <button class="btnes" (click)="openDialog()">Siguiente</button>
+        <button class="btnes" (click)="closeModal()">Terminar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
