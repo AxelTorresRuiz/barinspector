@@ -14,19 +14,14 @@ export class AuditComponent implements OnInit {
 
 
   openDialog(): void{
-    const dialogRef = this.dialog.open(AudittypeModalComponent,{
+    this.dialog.open(AudittypeModalComponent,{
       width:'41.875rem', height:'27.25rem'
-    })
-
-    dialogRef.afterClosed().subscribe(result=>{
-      if(result === 'openNewModal'){
-        this.dialog.open(AuditscanModalComponent,{
-          height:'27.25rem', width:'41.875rem'
-        })
-      }
     })
   }
 
+  closeModal(){
+
+  }
 
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Auditoría')
