@@ -1,12 +1,13 @@
 <div class="principal">
   <div class="header">
     Nueva Auditoria
+    <p class="close-modal" (click)="closeModal()">X</p>
   </div>
   <div class="body1">
     <p class="text">¿Qué tipo de auditoria deseas realiza?</p>
   </div>
   <div class="body2">
-    <button class="btn">Parcial</button>
-    <button class="btn">Completa</button>
+    <button (click)="openDialog()" class="btn">Parcial</button>
+    <button (click)="openDialog()" class="btn">Completa</button>
   </div>
 </div>

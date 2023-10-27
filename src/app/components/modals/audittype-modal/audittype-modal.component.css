@@ -52,3 +52,10 @@
   margin-top: 1rem;
   margin: 3rem;
 }
+
+.close-modal{
+  position: absolute;
+  top: 0rem;
+  right: .5rem;
+  cursor: pointer;
+}
