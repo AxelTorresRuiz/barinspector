@@ -9,8 +9,9 @@ import { Bar } from 'src/app/services/api/Bar.model';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  activeButton:string | null = null;
   barraActiva: Bar | undefined;
+
   constructor(private pagetitle: PagetitleService, private router:Router){}
 
   ngOnInit(): void {
@@ -28,19 +29,37 @@ export class NavbarComponent implements OnInit {
   getPageTitle(): string {
     return this.pagetitle.getPageTitle();
   }
-  myBar(){
-    this.router.navigate(['/mybar'])
+
+  myBar() {
+    this.router.navigate(['/mybar']);
+    this.activeButton = 'Botellas';
   }
-  audit(){
-    this.router.navigate(['/audit'])
+
+  audit() {
+    this.router.navigate(['/audit']);
+    this.activeButton = 'Audit';
   }
-  reports(){
-    this.router.navigate(['/reports'])
+
+  reports() {
+    this.router.navigate(['/reports']);
+    this.activeButton = 'Reportes';
   }
-  managers(){
-    this.router.navigate(['/managers'])
+
+  managers() {
+    this.router.navigate(['/managers']);
+    this.activeButton = 'Encargados';
   }
-  configuration(){
-    this.router.navigate(['/configuration'])
+
+  configuration() {
+    this.router.navigate(['/configuration']);
+    this.activeButton = 'Configuracion';
+  }
+
+  setActive(buttonName:string){
+    if(this.activeButton===buttonName){
+      this.activeButton = null;
+    }else {
+      this.activeButton = buttonName;
+    }
   }
 }
