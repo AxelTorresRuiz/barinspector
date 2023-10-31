@@ -40,9 +40,25 @@
         </div>
       </div>
       <div class="buttons">
-        <button class="btnmodal" (click)="addBotella()">Botella Nueva</button>
-        <button class="btnmodal" (click)="agregarConPesoDeBasucula()">Agregar</button>
+        <button class="btnmodal" (click)="addBotella()">Botella llena</button>
+        <button class="btnmodal" (click)="addPesoBotella()">Pesar botella</button>
+        <button class="btnmodal" (click)="agregarConPesoDeBasucula()">Terminar</button>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  .buttons{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+    align-items: center;
+  }
+
+  .btnmodal{
+    width: 45%;
+    margin: 2.4%;
+  }
+  
+</style>

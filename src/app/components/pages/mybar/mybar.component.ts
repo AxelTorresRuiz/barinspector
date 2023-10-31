@@ -60,7 +60,7 @@ export class MybarComponent implements OnInit {
 
   ngOnInit(): void {
     this.pageTitleService.setPageTitle('Mi barra')
-    this.obtenerDatosIniciales()
+    this.obtenerDatosIniciales();
   }
 
 

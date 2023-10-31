@@ -7,33 +7,33 @@
                         <div class="form-group">
                             <p class="col-md-12" style="font-size: 1.5rem;">Tipo de licor</p>
                             <div class="col-md-12">
-                                <select id="opcion" class="col-md-12 form-control">
+                                <select id="opcion" class="col-md-12 form-control" [(ngModel)]="licorTipo">
                                     <option value="" disabled selected hidden>Selecciona una opción</option>
-                                    <option value="opcion1">Tequila</option>
-                                    <option value="opcion2">Whisky</option>
-                                    <option value="opcion3">Ron</option>
-                                    <option value="opcion4">Vodka</option>
-                                    <option value="opcion3">Ginebra</option>
-                                    <option value="opcion3">Brandy</option>
-                                    <option value="opcion3">Coñac</option>
-                                    <option value="opcion3">Otros</option>
+                                    <option value="Tequila">Tequila</option>
+                                    <option value="Whisky">Whisky</option>
+                                    <option value="Ron">Ron</option>
+                                    <option value="Vodka">Vodka</option>
+                                    <option value="Ginebra">Ginebra</option>
+                                    <option value="Brandy">Brandy</option>
+                                    <option value="Coñac">Coñac</option>
+                                    <option value="Otros">Otros</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12 p-r-5 p-l-5">
                         <div class="form-group">
-                            <p class="col-md-12" style="font-size: 1.5rem; margin-top: 4rem;">Peso botella llena(gr)</p>
+                            <p class="col-md-12" style="font-size: 1.5rem; margin-top: 4rem;">Peso botella llena(KG)</p>
                             <div class="col-md-12">
-                                <input type="text" class="col-md-8" style="height: 3.4375rem;">
+                                <input type="number" class="col-md-8" style="height: 3.4375rem;" [(ngModel)]="bottle.FullBottleWeight">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <p class="col-md-12" style="font-size: 1.5rem; margin-top: 4rem;">Presentacion(ml)</p>
+                            <p class="col-md-12" style="font-size: 1.5rem; margin-top: 4rem;">Presentacion(L)</p>
                             <div class="col-md-12">
-                                <input type="text" class="col-md-8" style="height: 3.4375rem;">
+                                <input type="number" class="col-md-8" style="height: 3.4375rem;" [(ngModel)]="bottle.Presentacion">
                             </div>
                         </div>
                     </div>
@@ -48,40 +48,36 @@
                     <div class="form-group">
                         <p class="col-md-12" style="font-size: 1.5rem;">Nombre</p>
                         <div class="col-md-12">
-                            <input type="text" class="col-md-12" style="height: 3.4375rem;">
+                            <input type="text" class="col-md-12" style="height: 3.4375rem;" [(ngModel)]="bottle.Name">
                         </div>
                     </div>
                 </div>
                 <div class="col-12 p-r-5 p-l-5" style="display: flex;" >
                     <div class="form-group">
                         <div class="col-md-12">
-                            <p class="col-md-12" style="margin-top: 3.2rem; font-size: 1.5rem;">Peso botella vacia(gr)</p>
-                            <input type="text" class="col-md-12" style="height: 3.4375rem;">
-                        </div>
-                        <div class="col-md-12">
-                            <p class="col-md-12" style="margin-top: 3.2rem; font-size: 1.5rem;">Peso por onza(gr)</p>
-                            <input type="text" class="col-md-12" style="height: 3.4375rem;">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <p class="col-md-12" style="margin-top: 3.2rem; font-size: 1.5rem;">Peso botella vacia(gr)</p>
-                            <input type="text" class="col-md-12" style="height: 3.4375rem;">
-                        </div>
-                        <div class="col-md-12">
-                            <p class="col-md-12" style="margin-top: 3.2rem; font-size: 1.5rem;">Peso por onza(gr)</p>
-                            <input type="text" class="col-md-12" style="height: 3.4375rem;">
+                            <p class="col-md-12" style="margin-top: 3.2rem; font-size: 1.5rem;">Peso botella vacia(KG)</p>
+                            <input type="number" class="col-md-12" style="height: 3.4375rem;" [(ngModel)]="bottle.EmptyBottleWeight">
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div class="form-group">
+                <div class="col-12 p-r-5 p-l-5" style="display: flex;" >
+                    <div class="form-group" >
                         <div class="col-md-12">
-                            <button class="btn">Guadar</button>
+                            <p class="col-md-12" style="margin-top: 3.2rem; font-size: 1.5rem;">SKU</p>
+                            <input type="text" class="col-md-12" style="height: 3.4375rem;" [(ngModel)]="bottle.SKU" (keyup)="codeBar()">
+                            
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
 </div>
+<div>
+    <input type="file" accept=".jpg,.png,.svg" (change)="onFileSelected($event)">
+</div>
+                        <div style="display: flex; justify-content: right; margin-right: 5%;">
+                            <svg id="barcode"></svg>
+                            <button class="btn" (click)="guardar()">Guadar</button>
+                        </div>

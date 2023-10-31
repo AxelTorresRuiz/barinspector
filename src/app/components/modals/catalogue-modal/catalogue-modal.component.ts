@@ -62,9 +62,13 @@ export class CatalogueModalComponent implements OnInit {
   
   pesoAcumulado:number=0;
   botellas:number[]=[];
-  addBotella(){
+  addPesoBotella(){
     this.botellas.push(this.heightValue);
-    console.log(this.botellas.length)
+    this.pesoAcumulado=this.botellas.reduce((acumulador, valorActual) => acumulador + valorActual, 0) - (this.data.botellaSeleccionada.EmptyBottleWeight*this.botellas.length);
+  }
+
+  addBotella(){
+    this.botellas.push(this.data.botellaSeleccionada.FullBottleWeight);
     this.pesoAcumulado=this.botellas.reduce((acumulador, valorActual) => acumulador + valorActual, 0) - (this.data.botellaSeleccionada.EmptyBottleWeight*this.botellas.length);
   }
 
@@ -94,7 +98,10 @@ export class CatalogueModalComponent implements OnInit {
     if(this.btn2active){
       ml = ml*1.5;
     }
-    var bottle: BarBottle = { Id: 0, CurrentWeight: this.heightValue + this.pesoAcumulado, CreatedAt: new Date(), UpdatedAt: new Date(), BarId: barra.Id, BottleId: this.data.botellaSeleccionada.Id, CantidadDeServir:ml }
+    var bottle: BarBottle = { 
+      Id: 0, CurrentWeight: this.heightValue + this.pesoAcumulado, CreatedAt: new Date(), UpdatedAt: new Date(), 
+      BarId: barra.Id, BottleId: this.data.botellaSeleccionada.Id, CantidadDeServir:ml, NumeroDeBotellas: this.botellas.length + 1
+    }
     if (bottle.CurrentWeight != null && bottle.CurrentWeight >= 0) {
       this.botellas.push(this.pesoAcumulado + this.heightValue);
       barBottlePost(bottle);
