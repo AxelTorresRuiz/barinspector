@@ -13,6 +13,55 @@ export class NavbarComponent implements OnInit {
   barraActiva: Bar | undefined;
 
   constructor(private pagetitle: PagetitleService, private router:Router){}
+  buttonBar: boolean = false;
+  buttonAudit: boolean = false;
+  buttonReport: boolean = false;
+  buttonManager: boolean = false;
+  buttonConfiguration: boolean = false;
+
+  toggleButton(button: string){
+    if(button === 'button1'){
+      this.buttonBar = !this.buttonBar;
+      this.buttonAudit = false;
+      this.buttonReport = false;
+      this.buttonManager = false;
+      this.buttonConfiguration = false;
+      this.router.navigate(['/mybar'])
+    }
+    else if(button === 'button2'){
+      this.buttonAudit = !this.buttonAudit;
+      this.router.navigate(['/audit'])
+      this.buttonBar = false;
+      this.buttonReport = false;
+      this.buttonManager = false;
+      this.buttonConfiguration = false;
+    }
+    else if(button === 'button3'){
+      this.buttonReport = !this.buttonReport;
+      this.router.navigate(['/reports'])
+      this.buttonBar = false;
+      this.buttonAudit = false;
+      this.buttonManager = false;
+      this.buttonConfiguration = false;
+    }
+    else if(button ==='button4'){
+      this.buttonManager = !this.buttonManager;
+      this.router.navigate(['/managers'])
+      this.buttonBar = false;
+      this.buttonAudit = false;
+      this.buttonReport = false;
+      this.buttonConfiguration = false;
+    }
+    else if(button ==='button5'){
+      this.buttonConfiguration = !this.buttonConfiguration;
+      this.router.navigate(['/configuration'])
+      this.buttonBar = false;
+      this.buttonAudit = false;
+      this.buttonReport = false;
+      this.buttonManager = false;
+    }
+  }
+
 
   ngOnInit(): void {
     obtenerBarraActiva().then((r) => {
@@ -32,7 +81,7 @@ export class NavbarComponent implements OnInit {
 
   myBar() {
     this.router.navigate(['/mybar']);
-    this.activeButton = 'Botellas';
+
   }
 
   audit() {
@@ -55,11 +104,5 @@ export class NavbarComponent implements OnInit {
     this.activeButton = 'Configuracion';
   }
 
-  setActive(buttonName:string){
-    if(this.activeButton===buttonName){
-      this.activeButton = null;
-    }else {
-      this.activeButton = buttonName;
-    }
-  }
+
 }

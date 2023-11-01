@@ -69,11 +69,11 @@
                 <h1 class="title">{{ (barraActiva?.Name === 'Mi barra') ? barraActiva?.Name : getPageTitle() }}</h1>
             </div>
             <div class="headerinf">
-              <div class="btn"><button [ngClass]="{'boton': true, 'active': activeButton === 'Botellas'}" (click)="setActive('Botellas')">Botellas</button></div>
-              <div class="btn"><button [ngClass]="{'boton': true, 'active': activeButton === 'Auditoría'}" (click)="setActive('Auditoría')">Auditoría</button></div>
-              <div class="btn"><button [ngClass]="{'boton': true, 'active': activeButton === 'Reportes'}" (click)="setActive('Reportes')">Reportes</button></div>
-              <div class="btn"><button [ngClass]="{'boton': true, 'active': activeButton === 'Encargados'}" (click)="setActive('Encargados')">Encargados</button></div>
-              <div class="btn"><button [ngClass]="{'boton': true, 'active': activeButton === 'Configuración'}" (click)="setActive('Configuración')">Configuración</button></div>
+              <div class="btn"><button class="boton" (click)="toggleButton('button1')" [ngClass]="{'active': buttonBar}">Botellas</button></div>
+              <div class="btn"><button class="boton" (click)="toggleButton('button2')" [ngClass]="{'active': buttonAudit}">Auditoría</button></div>
+              <div class="btn"><button class="boton" (click)="toggleButton('button3')" [ngClass]="{'active': buttonReport}">Reportes</button></div>
+              <div class="btn"><button class="boton" (click)="toggleButton('button4')" [ngClass]="{'active': buttonManager}">Encargados</button></div>
+              <div class="btn"><button class="boton" (click)="toggleButton('button5')" [ngClass]="{'active': buttonConfiguration}">Configuración</button></div>
             </div>
         </div>
         <div class="morado">
