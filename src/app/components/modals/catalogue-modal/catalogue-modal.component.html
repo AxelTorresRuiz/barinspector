@@ -29,18 +29,34 @@
 
       <div>
         <label class="peso" for="weightInput">Peso:</label>
-        <input class="inputtext" type="text" id="weightInput" [(ngModel)]="heightValue">
+        <input class="inputtext" type="number" id="weightInput" [(ngModel)]="heightValue">
+        <div style="display: flex; justify-content: space-evenly;">
+          <p>Acumulado: {{obtenerOz(data.botellaSeleccionada, pesoAcumulado + heightValue)}} Oz</p>
+          <p>Botella Actual: {{obtenerOz(data.botellaSeleccionada, heightValue)}} Oz</p>
+        </div>
       </div>
 
       <div class="buttons">
-        <button class="btnmodal" onclick="">Botella Nueva</button>
-        <button class="btnmodal" (click)="agregarConPesoDeBasucula()">Agregar</button>
-      </div>
-
-      <div>
-        <button>1</button>
+        <button class="btnmodal" (click)="addBotella()">Botella llena</button>
+        <button class="btnmodal" (click)="addPesoBotella()">Pesar botella</button>
+        <button class="btnmodal" (click)="agregarConPesoDeBasucula()">Terminar</button>
       </div>
 
     </div>
   </div>
 </div>
+
+<style>
+  .buttons{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+    align-items: center;
+  }
+
+  .btnmodal{
+    width: 45%;
+    margin: 2.4%;
+  }
+
+</style>

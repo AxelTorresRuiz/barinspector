@@ -1,6 +1,7 @@
 import { response, urlencoded } from "express";
 import { Bottle } from "src/app/services/api/Bottle.model"
 import { Url } from "./const.api";
+import { barBottleGet } from "./BarBottle.service";
 
 var URLCompleta = Url + "/Bottle";
 export async function bottleGet(parametros: string = "") {
@@ -32,7 +33,7 @@ export async function bottlePost(bottle: Bottle, params: string = "") {
     console.info(JSON.stringify(bottle))
 
     await fetch(URLCompleta + params, requestOptions)
-        .then(response => response.json())
+        .then(response => response.text())
         .then(data => {
             console.info(bottle);
         })
@@ -63,20 +64,18 @@ export async function bottlePut(bottle: Bottle, params: string = "") {
         });
 }
 
-export async function bottleImagePost(Id: number, component: HTMLInputElement) {
+export async function bottleImagePost(Id: number, file: File) {
 
-    // Crea un objeto FormData
-    const formData = new FormData();
-    if (component.files != null) {
-        // Agrega el archivo al objeto FormData
-        formData.append('image', component.files[0]);
+    if (file != null) {
+        const formData = new FormData();
+        formData.append("image", file);
 
         // Realiza la solicitud fetch
-        fetch(URLCompleta+"/"+Id+"/SaveImagen", {
+        fetch(URLCompleta + "/" + Id + "/SaveImagen", {
             method: 'POST',
             body: formData
         })
-            .then(response => response.json())
+            .then(response => response.text())
             .then(data => {
                 // Maneja la respuesta de la solicitud
             })
@@ -85,4 +84,9 @@ export async function bottleImagePost(Id: number, component: HTMLInputElement) {
                 console.error(error);
             });
     }
+}
+
+export function obtenerOz(BarBottleYBotella: Bottle, peso: number): number {
+    //console.info(BarBottleYBotella)
+    return (peso - BarBottleYBotella.EmptyBottleWeight) * 1000 / BarBottleYBotella.WeightPerOunce;
 }
