@@ -100,7 +100,7 @@ export class CatalogueModalComponent implements OnInit {
     }
     var bottle: BarBottle = { 
       Id: 0, CurrentWeight: this.heightValue + this.pesoAcumulado, CreatedAt: new Date(), UpdatedAt: new Date(), 
-      BarId: barra.Id, BottleId: this.data.botellaSeleccionada.Id, CantidadDeServir:ml, NumeroDeBotellas: this.botellas.length + 1
+      BarId: barra.Id, BottleId: this.data.botellaSeleccionada.Id, CantidadDeServir:ml, NumOfBottles: this.botellas.length + 1
     }
     if (bottle.CurrentWeight != null && bottle.CurrentWeight >= 0) {
       this.botellas.push(this.pesoAcumulado + this.heightValue);

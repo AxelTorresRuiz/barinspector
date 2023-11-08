@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuditscanModalComponent } from '../auditscan-modal/auditscan-modal.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { obtenerBarraActiva } from 'src/app/services/api/Bar.service';
+import { necesariInformationSave } from 'src/app/services/api/Tools';
 
 @Component({
   selector: 'app-audittype-modal',
   templateUrl: './audittype-modal.component.html',
   styleUrls: ['./audittype-modal.component.css']
 })
-export class AudittypeModalComponent {
+export class AudittypeModalComponent implements OnInit{
   constructor(private dialogRef: MatDialogRef<AudittypeModalComponent>, public dialog: MatDialog ){}
 
 
@@ -21,5 +23,10 @@ export class AudittypeModalComponent {
   closeModal(){
     this.dialogRef.close()
   }
+
+  ngOnInit(): void {
+    necesariInformationSave();
+  }
+  
 
 }

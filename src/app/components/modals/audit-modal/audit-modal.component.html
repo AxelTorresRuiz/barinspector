@@ -7,10 +7,11 @@
 
     <div class="left col-md-4">
       <div>
-        <p class="text">Tequila José Cuervo Tradicional Plata</p>
+        <p class="text">{{botella.Name}}</p>
       </div>
       <div>
-        <img src="../../../../assets/botella.png" alt="" class="img">
+        <img [src]="'https://barinspector.com/api/bottle/'+botella.Id+'/getimagen'" alt="" class="img">
+        <div><svg id="barcodeBottleAudit"></svg></div>
       </div>
     </div>
 
@@ -19,14 +20,14 @@
         <p class="txt">Peso</p>
       </div>
       <div>
-        <input type="text" class="inputweight">
+        <input type="text" class="inputweight" [(ngModel)]="pesoObtenido">
       </div>
       <div>
         <button class="btn">Botella Vacia</button>
       </div>
       <div style="display: flex;">
         <p class="text">Cant. Botellas</p>
-        <input type="text" class="inputbottle">
+        <input type="number" class="inputbottle" [(ngModel)]="this.barBottle.NumOfBottles">
       </div>
       <div class="botones">
         <button class="btnes" (click)="openDialog()">Siguiente</button>
