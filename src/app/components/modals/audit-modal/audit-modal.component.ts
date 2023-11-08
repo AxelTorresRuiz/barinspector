@@ -5,7 +5,7 @@ import * as JsBarcode from 'jsbarcode';
 import { Bottle } from 'src/app/services/api/Bottle.model';
 import { BarBottle } from 'src/app/services/api/BarBottle.model';
 import { BarAudit, barAuditAuditingAdd, barAuditAuditingClean, barAuditAuditingMaxId } from 'src/app/services/api/BarAudit.model';
-import { sleep } from 'src/app/services/api/const.api';
+import { convertirAOz, convertirAOzString, sleep } from 'src/app/services/api/const.api';
 import { getWeight } from 'src/app/services/bascula.service';
 @Component({
   selector: 'app-audit-modal',
@@ -51,17 +51,17 @@ export class AuditModalComponent implements OnInit {
     console.log(barAudit)
   }
 
+  cantidadOz="";
   pesando=true;
   pesoObtenido = 0;
   async obtenerPeso() {
-
     while (this.pesando) {
       try {
         var aux = await getWeight();
         this.pesoObtenido = Number.isNaN(aux) ? this.pesoObtenido : aux;
         console.info(this.pesoObtenido);
       } catch (error) { }
-
+      this.cantidadOz=convertirAOzString((this.pesoObtenido-this.botella.EmptyBottleWeight)/this.botella.DensityInLiters);
       await sleep(0);
     }
   }
