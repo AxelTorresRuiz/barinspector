@@ -3,6 +3,7 @@ import { AuditscanModalComponent } from '../auditscan-modal/auditscan-modal.comp
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { obtenerBarraActiva } from 'src/app/services/api/Bar.service';
 import { necesariInformationSave } from 'src/app/services/api/Tools';
+import { barAuditAuditingClean } from 'src/app/services/api/BarAudit.model';
 
 @Component({
   selector: 'app-audittype-modal',
@@ -25,6 +26,7 @@ export class AudittypeModalComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    barAuditAuditingClean();
     necesariInformationSave();
   }
   
