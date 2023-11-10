@@ -1,0 +1,56 @@
+.sidebar{
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.top-bar{
+  width: 100%;
+  height: 5%;
+  font-family: Roboto;
+  color: #FFFFFF;
+  background-color: #2D1E14;
+  position: absolute;
+  font-size: 26px;
+}
+.bottom-bar{
+  width: 100%;
+  height: 100%;
+  background-color: #4B4540;
+  position: relative;
+  top: 5%;
+}
+.list{
+  list-style-type: none;
+  font-family: roboto;
+  font-size: 1.375rem;
+  color: #FFFFFF;
+  padding: 2pc;
+
+}
+.items{
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.slogan{
+  font-family: Ingrid Darling;
+  font-size: 4rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  position: relative;
+  text-align: center;
+  top: 9rem;
+  line-height: normal;
+}
+.img{
+  width: 15.9375rem;
+  height: 8.75rem;
+  flex-shrink: 0;
+  position: relative;
+  left: 3rem;
+  top: 9rem;
+  
+}

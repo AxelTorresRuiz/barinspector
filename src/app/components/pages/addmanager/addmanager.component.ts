@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { limpiraYGuardarBarraActiva, obtenerBarraActiva } from 'src/app/services/api/Bar.service';
 import { User } from 'src/app/services/api/User.model';
 import { userGet, userPost } from 'src/app/services/api/User.service';
 import { PagetitleService } from 'src/app/services/pagetitle.service';
@@ -8,6 +9,7 @@ import { PagetitleService } from 'src/app/services/pagetitle.service';
   styleUrls: ['./addmanager.component.css']
 })
 export class AddmanagerComponent implements OnInit {
+
   user:User={Id:0, Name:"", LastName:"", Role:"", Slug:"", CreatedAt:new Date(), UpdatedAt:new Date()}
   LastNameFather = "";
   LastNameMother = "";
@@ -16,7 +18,9 @@ export class AddmanagerComponent implements OnInit {
     this.user.LastName=this.LastNameFather + " " + this.LastNameMother;
   }
 
-  saveUser(){
+  async saveUser(){
+    const barra = await obtenerBarraActiva();
+    delete barra.id;
     userPost(this.user);
   }
 
