@@ -17,9 +17,13 @@
       <div class="col-8">
         <p class="botellatxt">{{BarBottleYBotella.bottle.Name}}</p>
         <div style="display: flex;">
-          <div class="textos col-12">
+          <div class="textos col-4">
             <p class="textonza">DISPONIBLE EN BARRA</p>
             <p class="onzinput">{{(BarBottleYBotella.bottle.WeightPerOunce*(BarBottleYBotella.barBottle.CurrentWeight-BarBottleYBotella.bottle.EmptyBottleWeight/1000)).toFixed(2)}} oz</p>
+          </div>
+          <div class="grafica col-8" style="max-width: 200;">
+            <canvas baseChart [datasets]="pieChartData" [type]="pieChartType" [options]="pieChartOptions">
+            </canvas>
           </div>
         </div>
       </div>
