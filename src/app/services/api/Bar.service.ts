@@ -1,6 +1,6 @@
 import { Bar } from "./Bar.model";
 import { db, useDB } from "./DBLocal";
-import { Url } from "./const.api";
+import { Url, setBarName} from "./const.api";
 
 var URLCompleta = Url + "/Bar";
 export async function barGet(parametros: string = "?$filter=DeletedAt eq null") {
@@ -67,9 +67,10 @@ export async function barPut(bar: Bar, params: string = "") {
 export async function limpiraYGuardarBarraActiva(value:Bar){
     await db.table("barActivo").clear();
     db.table("barActivo").add(value);
-    obtenerBarraActiva()
+    setBarName(value.Name);
 }
 
 export async function obtenerBarraActiva() {
-    return (await db.table("barActivo").toArray())[0];
+    var bar= (await db.table("barActivo").toArray())[0];
+    return bar;
 }

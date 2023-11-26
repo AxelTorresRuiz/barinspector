@@ -1,3 +1,5 @@
+import { Observable, Subject, Subscription } from "rxjs";
+
 export let Url:string;
 Url="https://barinspector.com/api"
 //Url="http://localhost:5126"
@@ -19,3 +21,8 @@ export function convertirAOzString(litros:number, decimales:number=2):string{
 export function sleep(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+
+  export function setBarName(name:string){
+    barName=name;
+  }
+export let barName:string = "";

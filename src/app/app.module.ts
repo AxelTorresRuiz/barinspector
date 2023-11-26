@@ -32,7 +32,8 @@ import { ConfigureScaleComponent } from './components/pages/configure-scale/conf
 import { AudittypeModalComponent } from './components/modals/audittype-modal/audittype-modal.component';
 import { AuditscanModalComponent } from './components/modals/auditscan-modal/auditscan-modal.component';
 import { AuditModalComponent } from './components/modals/audit-modal/audit-modal.component';
-
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { AuditModalComponent } from './components/modals/audit-modal/audit-modal
     AudittypeModalComponent,
     AuditscanModalComponent,
     AuditModalComponent,
-
+    SidebarComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

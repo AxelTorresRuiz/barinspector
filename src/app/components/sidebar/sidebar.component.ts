@@ -1,14 +1,29 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { obtenerBarraActiva } from 'src/app/services/api/Bar.service';
+import { barName, setBarName } from 'src/app/services/api/const.api';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
 
-  constructor(private router:Router){}
+  ngOnInit(): void {
+    this.getInfo();
+    this.titleName =  barName;
+  }
+  titleName="";
+  async getInfo(){
+    var bar = await obtenerBarraActiva();
+    setBarName(bar.Name);
+    this.titleName =  barName;
+  }
+
+  constructor(private router:Router){
+  }
+
 
   myBar(){
     this.router.navigate(['/mybar'])

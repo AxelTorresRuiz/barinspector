@@ -1,9 +1,8 @@
 #navbar {
   align-items: center;
   background-color: #ffffff;
-  width: 80%;
-  position: absolute;
-  left: 20%;
+  
+  
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -12,7 +11,7 @@
 #inicio {
   font-size: 3rem;
   background-color: #fbfbfb;
-  height: 6rem;
+  height: 7vh;
   padding: 0;
   margin: 0;
   display: flex;

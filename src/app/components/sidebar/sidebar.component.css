@@ -1,5 +1,5 @@
 .sidebar{
-  width: 20%;
+  width: 15vw;
   height: 100%;
   position: absolute;
   display: flex;
@@ -27,7 +27,7 @@
   font-family: roboto;
   font-size: 1.375rem;
   color: #FFFFFF;
-  padding: 2pc;
+  padding: 0pc;
 
 }
 .items{
@@ -44,13 +44,14 @@
   text-align: center;
   top: 9rem;
   line-height: normal;
+
 }
 .img{
   width: 15.9375rem;
   height: 8.75rem;
   flex-shrink: 0;
   position: relative;
-  left: 3rem;
+  left: 0rem;
   top: 9rem;
   
 }
