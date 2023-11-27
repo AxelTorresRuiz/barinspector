@@ -30,7 +30,8 @@
             <p class="onzinput">{{convertirAOzString(BarBottleYBotella.bottle.DensityInLiters*(BarBottleYBotella.barBottle.CurrentWeight-BarBottleYBotella.bottle.EmptyBottleWeight*BarBottleYBotella.barBottle.NumOfBottles))}}</p>
           </div>
           <div class="grafica col-8" style="max-width: 200;">
-            <p>Disponible {{(calcularDecimalDeDisponible(BarBottleYBotella)*100).toFixed(2)}}%</p>
+            <p>Disponible</p>
+            <p class="onzinput">{{(calcularDecimalDeDisponible(BarBottleYBotella)*100).toFixed(2)}}%</p>
           </div>
         </div>
       </div>

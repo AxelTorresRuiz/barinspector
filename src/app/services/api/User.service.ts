@@ -42,6 +42,28 @@ export async function userPost(user: User, params: string = "") {
         });
 }
 
+export async function userImagePost(Id: number, file: File) {
+
+    if (file != null) {
+        const formData = new FormData();
+        formData.append("image", file);
+
+        // Realiza la solicitud fetch
+        fetch(URLCompleta + "/" + Id + "/SaveImagen", {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(data => {
+                // Maneja la respuesta de la solicitud
+            })
+            .catch(error => {
+                // Maneja cualquier error
+                console.error(error);
+            });
+    }
+}
+
 export async function userPut(user: User, params: string = "") {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");

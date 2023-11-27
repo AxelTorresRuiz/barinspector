@@ -11,4 +11,5 @@ export interface User {
     Image?: string;
     Email?: string;
     Phone?: string;
+    BranchId: number;
 }

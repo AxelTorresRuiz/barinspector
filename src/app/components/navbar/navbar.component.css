@@ -33,7 +33,7 @@
 .morado {
   grid-column: 3;
   height: 40.1875rem;
-  height: 90vh;
+  height: 900px;
   width: 95%;
   width: 84.5vw;
   margin-top: 0;
@@ -47,7 +47,7 @@
   border-radius: 12px;
   border: 1px solid #4b454049;
   margin-top: 0.5rem;
-  height: 88vh;
+  height: 92vh;
   padding: 0.5rem;
   margin-right: 0.25rem;
   
