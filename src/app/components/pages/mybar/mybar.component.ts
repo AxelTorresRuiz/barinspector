@@ -29,6 +29,7 @@ export class MybarComponent implements OnInit {
       var bottle: Bottle = (await bottleGet(" and Id eq " + barBottles[i].BottleId) as Bottle[])[0];
       this.barBottlesYBotella.push({ barBottle: barBottles[i], bottle:bottle})
     }
+    console.log(this.barBottlesYBotella)
     this.barBottlesYBotella=this.barBottlesYBotella;
   }
   convertirAOzString(litros:number):string{
@@ -63,5 +64,11 @@ export class MybarComponent implements OnInit {
     this.obtenerDatosIniciales();
   }
 
+  //regresa cuanta cantidad hay dispoblible, por ejemplo si todas las botellas estan llenas retorna 1 (100%) caso opuesto 0 (0%)
+  calcularDecimalDeDisponible(BarBottleYBotella:any[any]){
+    return (BarBottleYBotella.barBottle.CurrentWeight-(BarBottleYBotella.bottle.EmptyBottleWeight*BarBottleYBotella.barBottle.NumOfBottles))
+      /
+    (BarBottleYBotella.barBottle.NumOfBottles*(BarBottleYBotella.bottle.FullBottleWeight-BarBottleYBotella.bottle.EmptyBottleWeight));
+  }
 
 }

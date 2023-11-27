@@ -1,135 +1,165 @@
 .grid-container {
-    overflow-y: hidden;
+  overflow-y: hidden;
+}
+
+@media(min-width:1000px) {
+  .grid-container {
+    display: flex;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100vh;
+    /* 100% del alto de la ventana (viewport height) */
+    grid-auto-rows: 1fr;
   }
-@media(min-width:1000px){
-    .grid-container {
-        display: flex;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 100vh; /* 100% del alto de la ventana (viewport height) */
-        grid-auto-rows: 1fr;
-      }
 }
 
 
-  .rojo {
-    width: 18vw;
-  }
-  .azul{
-    width: 100%;
-    height: 100%;
+.rojo {
+  width: 18vw;
+}
 
-  }
+.azul {
+  width: 100%;
+  height: 100%;
+
+}
 
 
-  .verde {
-    /* Padre del header*/
-    max-height: 20%;
-    
-  }
-  .morado{
-    grid-column: 3;
-    height: 40.1875rem;
-    height: 90vh;
-    width: 95%;
-    width: 100%;
-    margin-top: 0;
-    /*margin-left: 2rem;*/
-    overflow: hidden;
-    overflow-y: auto;
-  }
+.verde {
+  /* Padre del header*/
+  max-height: 20%;
+  margin-right: 0.25rem;
+}
 
-  .sidebarsup {
-    background-color: #2D1E14;
-    grid-column: 1;
-    /* Altura del elemento 1 en rems */
-    height: 7%;
-  }
+.morado {
+  grid-column: 3;
+  height: 40.1875rem;
+  height: 90vh;
+  width: 95%;
+  width: 84.5vw;
+  margin-top: 0;
+  /*margin-left: 2rem;*/
+  overflow: hidden;
+  overflow-y: auto;
 
-  .sidebarinf {
-    background-color: #4B4540;
-    grid-column: 2;
-    /* Altura del elemento 2 en rems */
-    height: 93%;
-    display: flex;
-    flex-direction: column;
-  }
+  backdrop-filter: blur(5px) saturate(173%);
+  -webkit-backdrop-filter: blur(5px) saturate(173%);
+  background-color: rgba(75, 69, 64, 0);
+  border-radius: 12px;
+  border: 1px solid #4b454049;
+  margin-top: 0.5rem;
+  height: 88vh;
+  padding: 0.5rem;
+  margin-right: 0.25rem;
+  
+}
+.morado::-webkit-scrollbar{
+  border-radius: 0 12px 12px 0;
+  background-color: transparent;
+}
+.morado::-webkit-scrollbar-track{
+  background-color: transparent;
+  border-radius: 0 12px 12px 0;
+  border: hsla(27, 8%, 27%, 0.479) 1px solid;
+}
+.morado::-webkit-scrollbar-thumb{
+  border-radius: 0 12px 12px 0;
+  background-color: hsla(27, 8%, 27%, 0.25);
+}
 
-  .headersup{
-    /* Hijos de verde */
-    background-color: #fff;
-    grid-column: 1;
-    height: 70%;
-  }
+.sidebarsup {
+  background-color: #2D1E14;
+  grid-column: 1;
+  /* Altura del elemento 1 en rems */
+  height: 7%;
+}
 
-  .headerinf{
-    /* Hijos de verde */
-    background-color: #4B4540;
-    grid-column: 2;
-    display: flex;
-    grid-row: 5;
-    justify-content: space-evenly;
-  }
+.sidebarinf {
+  background-color: hsl(27, 8%, 27%);
+  grid-column: 2;
+  /* Altura del elemento 2 en rems */
+  height: 93%;
+  display: flex;
+  flex-direction: column;
+}
+
+.headersup {
+  /* Hijos de verde */
+  background-color: #fff;
+  grid-column: 1;
+  height: 70%;
+}
+
+.headerinf {
+  /* Hijos de verde */
+  background-color: #4B4540;
+  grid-column: 2;
+  display: flex;
+  grid-row: 5;
+  justify-content: space-evenly;
+}
 
 /* Aqui terminan los grids */
 
 .boton {
-    height: 1.9375rem;
-    background-color: transparent;
-    margin-top: 2.1rem;
-    border: none;
-    border-radius: 1rem 1rem 1rem 1rem;;
-    color: #ffffff;
-    font-size: 16px;
-  }
+  height: 1.9375rem;
+  background-color: transparent;
+  margin-top: 2.1rem;
+  border: none;
+  border-radius: 1rem 1rem 1rem 1rem;
+  ;
+  color: #ffffff;
+  font-size: 16px;
+}
 
-  .boton.active {
-    background-color: #ffffff;
-    color: #000000;
-  }
+.boton.active {
+  background-color: #ffffff;
+  color: #000000;
+}
 
-  .title{
-    padding: 4rem;
-    font-size: 2.5rem;
-  }
-  .barname{
-    font-size: 2rem;
-    color: white;
-    padding: 1.5rem;
-    margin: 0;
-  }
+.title {
+  padding: 4rem;
+  font-size: 2.5rem;
+}
 
-  .icons{
-    margin-left: 2rem;
-    margin-top: 2rem;
-  }
+.barname {
+  font-size: 2rem;
+  color: white;
+  padding: 1.5rem;
+  margin: 0;
+}
 
-  .sidebuttons{
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5rem;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
+.icons {
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
 
-  .list{
-    list-style-type: none;
-    padding: 1.5rem;
-  }
+.sidebuttons {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-top: 2rem;
+}
 
-  .items{
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    cursor: pointer;
-  }
+.list {
+  list-style-type: none;
+  padding: 1.5rem;
+}
 
-  .slogan{
-    font-family: Ingrid Darling;
-    font-size: 5rem;
-    color: #fff;
-    padding: 2rem;
-    margin-top: 6rem;
-  }
+.items {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
 
-  .img{
-    padding: 2rem;
-  }
+.slogan {
+  font-family: Ingrid Darling;
+  font-size: 5rem;
+  color: #fff;
+  padding: 2rem;
+  margin-top: 6rem;
+}
+
+.img {
+  padding: 2rem;
+}

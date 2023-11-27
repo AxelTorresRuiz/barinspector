@@ -12,23 +12,30 @@
 
 
 <div class="card col" *ngFor="let BarBottleYBotella of barBottlesYBotella">
+  <div class="barraHorizontal">
+    <div style="height: 100%;" class="disponible" [ngStyle]="
+        {'width': calcularDecimalDeDisponible(BarBottleYBotella)*100+'%'}
+      "></div>
+    <div style="height: 100%;" class="noDisponible" [ngStyle]="
+      {'width': (1-calcularDecimalDeDisponible(BarBottleYBotella))*100+'%'}
+    "></div>
+  </div>
   <div class="card-body">
     <div class="row">
       <div class="col-8">
         <p class="botellatxt">{{BarBottleYBotella.bottle.Name}}</p>
         <div style="display: flex;">
-          <div class="textos col-4">
+          <div class="textos col-6">
             <p class="textonza">DISPONIBLE EN BARRA</p>
-            <p class="onzinput">{{(BarBottleYBotella.bottle.WeightPerOunce*(BarBottleYBotella.barBottle.CurrentWeight-BarBottleYBotella.bottle.EmptyBottleWeight/1000)).toFixed(2)}} oz</p>
+            <p class="onzinput">{{convertirAOzString(BarBottleYBotella.bottle.DensityInLiters*(BarBottleYBotella.barBottle.CurrentWeight-BarBottleYBotella.bottle.EmptyBottleWeight*BarBottleYBotella.barBottle.NumOfBottles))}}</p>
           </div>
           <div class="grafica col-8" style="max-width: 200;">
-            <canvas baseChart [datasets]="pieChartData" [type]="pieChartType" [options]="pieChartOptions">
-            </canvas>
+            <p>Disponible {{(calcularDecimalDeDisponible(BarBottleYBotella)*100).toFixed(2)}}%</p>
           </div>
         </div>
       </div>
       <div class="col-4">
-        <p class="textnum">1</p>
+        <p class="textnum">{{BarBottleYBotella.barBottle.NumOfBottles}}</p>
         <img class="img" [src]="'https://barinspector.com/api/bottle/'+BarBottleYBotella.bottle.Id+'/getimagen'" alt="botellon">
         <button class="btnml">{{convertirAOzString(BarBottleYBotella.bottle.Presentacion)}}, {{(BarBottleYBotella.bottle.Presentacion)*1000}}ml</button>
       </div>

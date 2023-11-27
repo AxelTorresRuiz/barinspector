@@ -1,4 +1,4 @@
-.card{
+.card {
   width: 32%;
   height: 16.4375rem;
   flex-shrink: 0;
@@ -13,13 +13,27 @@
   word-wrap: break-word;
   overflow: hidden;
 
-  backdrop-filter: blur(10px) saturate(200%);
-  -webkit-backdrop-filter: blur(10px) saturate(200%);
-  background-color: rgba(75, 69, 64, 0.09);
+
+  backdrop-filter: blur(5px) saturate(173%);
+  -webkit-backdrop-filter: blur(5px) saturate(173%);
+  background-color: rgba(75, 69, 64, 0.1);
   border-radius: 12px;
   border: 1px solid #4b454049;
 }
-
+.barraHorizontal{
+  position: absolute; 
+  height: 100%; 
+  width: 100%;
+  display: flex;
+}
+.disponible{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(173,238,216,0.35) 100%);
+}
+.noDisponible{
+  background: rgb(255,105,97);
+background: linear-gradient(90deg, rgba(255,105,97,0.35) 0%, rgba(255,105,97,0) 100%);
+  }
 @media(min-with:1200px){
   .card{
     width: 25.3125rem;
@@ -27,6 +41,13 @@
   }
 }
 
+.grafica{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  font-family: "ubuntu";
+}
 
 .btn{
   margin-top: 1pc;
@@ -101,12 +122,12 @@
   position:relative;
   margin-left: 1rem;
   margin-top: .5rem;
-
+  margin-right: .5rem;
 }
 
 .textonza{
   color: #535353;
-  font-family: robotoSlab;
+  font-family: ubuntu;
   font-size: 1rem;
   font-style: normal;
   line-height: normal;
@@ -122,12 +143,15 @@
   border: 1px solid #000;
   background: rgba(217, 217, 217, 0.00);
   color: #4B4540;
-  font-family: Inter;
+  font-family: ubuntu;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin-left: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .textos{

@@ -9,11 +9,19 @@
 .top-bar{
   width: 100%;
   height: 5%;
-  font-family: Roboto;
+  font-family: ubuntu;
   color: #FFFFFF;
   background-color: #2D1E14;
   position: absolute;
-  font-size: 26px;
+  font-size: xx-large;
+  display: flex;
+  align-items: center;
+}
+a{
+  font-family: ubuntu;
+}
+li{
+  display: flex;
 }
 .bottom-bar{
   width: 100%;

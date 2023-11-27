@@ -9,6 +9,7 @@ export interface Bottle {
     FullBottleWeight: number;
     EmptyBottleWeight: number;
     WeightPerOunce: number;
+    DensityInLiters?: number;
     Slug?: string;
     CreatedAt?: Date;
     UpdatedAt?: Date;
