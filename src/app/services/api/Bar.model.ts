@@ -7,6 +7,6 @@ export interface Bar {
     CreatedAt?: string;
     UpdatedAt?: string;
     DeletedAt?: string;
-    barBottles?: BarBottle[];
+    BarBottles?: BarBottle[];
   }
 

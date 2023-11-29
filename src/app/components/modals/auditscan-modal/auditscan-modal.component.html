@@ -9,7 +9,10 @@
   </div>
 
   <div class="body2">
-    <input class="scan" type="text" (keypress)="onKeyPress($event)">
+    <input class="scan" type="text"  (input)="onKeyPress($event)" [(ngModel)]="sku">
+    <div style="width: 100%;display: flex;justify-content: center;">
+    <svg id="barcode"></svg>
+    </div>
   </div>
 
 </div>
