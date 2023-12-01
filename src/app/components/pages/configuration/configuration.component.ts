@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { barGet, barPost, limpiraYGuardarBarraActiva, obtenerBarraActiva } from "../../../services/api/Bar.service";
 import { Bar } from 'src/app/services/api/Bar.model';
 import { db } from 'src/app/services/api/DBLocal';
+import { reload } from 'src/app/services/api/Tools';
 
 @Component({
   selector: 'app-configuration',
@@ -63,7 +64,6 @@ export class ConfigurationComponent implements OnInit {
         this.cualBarra();
       }).catch(()=>{
         console.log("No hay ninguna barra activa");
-        
       });
     });
   }
@@ -80,9 +80,10 @@ export class ConfigurationComponent implements OnInit {
     this.selection[indice] = true;
     await limpiraYGuardarBarraActiva(this.barras[indice]);
     this.barraActiva = this.barras[indice];
+    reload();
   }
 
   viewcatalogue() {
-    this.router.navigate(['/catalogue']);
+    this.router.navigate(['/catalogue'], { queryParams: { view: "true" } }); 
   }
 }

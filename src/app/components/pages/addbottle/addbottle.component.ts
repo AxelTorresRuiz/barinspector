@@ -3,6 +3,7 @@ import { PagetitleService } from 'src/app/services/pagetitle.service';
 import { Bottle } from 'src/app/services/api/Bottle.model';
 import { bottleGet, bottleImagePost, bottlePost } from 'src/app/services/api/Bottle.service';
 import * as JsBarcode from 'jsbarcode';
+import { makeGet } from 'src/app/services/api/Tools';
 @Component({
   selector: 'app-addbottle',
   templateUrl: './addbottle.component.html',
@@ -28,18 +29,28 @@ export class AddbottleComponent implements OnInit {
     if (this.bottle.Presentacion != null && this.bottle.Presentacion > 0) {
       this.bottle.Liquor = this.licorTipo;
       this.bottle.WeightPerOunce = (this.bottle.FullBottleWeight - this.bottle.EmptyBottleWeight) / this.bottle.Presentacion;
-      console.log(this.bottle);
+      try {
+        var sku = await makeGet("/bottle" + "?$select=SKU&$filter=SKU eq '" + this.bottle.SKU + "'") as any[];
+        if (sku.length !== 0) {
+          alert("El SKU ya ha sido agregado anteriormente");
+          return;
+        }
+      } catch (e) {
+        alert("No se pudo comprobar el SKU");
+      }
       try {
         await bottlePost(this.bottle);
       } catch (e) {
         console.info(e)
+        alert("Fallo al enviar informacion al servidor")
+        return;
       }
       var parametro: string = ` and Name eq '${this.bottle.Name}' and Liquor eq '${this.bottle.Liquor}' and Presentacion eq ${this.bottle.Presentacion} and SKU eq '${this.bottle.SKU}'`;
-      console.log(parametro);
       var botellaCreada = (await bottleGet(parametro) as Bottle[])[0];
-      console.log(botellaCreada)
-      if (botellaCreada.Id != null && botellaCreada.Id > 0 && this.file != null)
+      if (botellaCreada.Id != null && botellaCreada.Id > 0 && this.file != null) {
         await bottleImagePost(botellaCreada.Id, this.file);
+      }
+      alert("Se ha creado con exito");
     } else {
       alert("Ingrese la presentación del producto");
     }
@@ -70,7 +81,8 @@ export class AddbottleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pagetitleservice.setPageTitle('Añadir Botella')
+    this.pagetitleservice.setPageTitle('Añadir Botella');
+
   }
 
 }

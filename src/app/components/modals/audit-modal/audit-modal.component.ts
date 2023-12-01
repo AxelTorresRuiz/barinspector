@@ -72,6 +72,10 @@ export class AuditModalComponent implements OnInit {
     this.dialogRef.close()
   }
 
+  async onlyClose(){
+    this.dialogRef.close();
+  }
+
   async saveAudit() {
     
   }
@@ -86,7 +90,7 @@ export class AuditModalComponent implements OnInit {
         this.pesoObtenido = Number.isNaN(aux) ? this.pesoObtenido : aux;
         console.info(this.pesoObtenido);
       } catch (error) { }
-      this.cantidadOz = convertirAOzString((this.pesoObtenido - this.botella.EmptyBottleWeight) / this.botella.DensityInLiters);
+      this.cantidadOz = convertirAOzString((this.pesoObtenido - this.botella.EmptyBottleWeight) * this.botella.DensityInLiters);
       await sleep(0);
     }
   }

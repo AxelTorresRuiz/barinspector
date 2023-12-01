@@ -1,9 +1,10 @@
 import { Bar } from "./Bar.model";
 import { db, useDB } from "./DBLocal";
+import { reload } from "./Tools";
 import { Url, setBarName} from "./const.api";
 
 var URLCompleta = Url + "/Bar";
-export async function barGet(parametros: string = "?$filter=DeletedAt eq null") {
+export async function barGet(parametros: string = "") {
     let bar = {};
     await fetch(URLCompleta + parametros)
         .then(response => response.json())

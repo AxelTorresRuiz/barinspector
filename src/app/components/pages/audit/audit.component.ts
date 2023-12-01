@@ -9,6 +9,8 @@ import { BarAudit } from 'src/app/services/api/BarAudit.model';
 import { BarBottle } from 'src/app/services/api/BarBottle.model';
 import { Bottle } from 'src/app/services/api/Bottle.model';
 import { convertirAOzString } from 'src/app/services/api/const.api';
+import { obtenerBarraActiva } from 'src/app/services/api/Bar.service';
+import { Bar } from 'src/app/services/api/Bar.model';
 @Component({
   selector: 'app-audit',
   templateUrl: './audit.component.html',
@@ -35,7 +37,8 @@ export class AuditComponent implements OnInit {
   barBottle: BarBottle | undefined;
   bottle: Bottle | undefined;
   async obtenerDatos(){
-    this.barAudits = (await realizarSolicitudGet("/barAudit", "?$expand=Bar,BarBottle($expand=Bottle)&$orderby=UpdatedAt desc"))["value"] as BarAudit[]
+    const barActive:Bar = await obtenerBarraActiva();
+    this.barAudits = (await realizarSolicitudGet("/barAudit", "?$expand=Bar,BarBottle($expand=Bottle)&$orderby=UpdatedAt desc&$filter=BarId eq "+barActive.Id))["value"] as BarAudit[]
     console.log(this.barAudits)
   }
 
@@ -45,7 +48,7 @@ export class AuditComponent implements OnInit {
   }
 
   convertirAOz(num:number){
-    return convertirAOzString(num);
+    return convertirAOzString(num, 3);
   }
 
  

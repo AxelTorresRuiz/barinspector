@@ -9,8 +9,8 @@
   <button type="button" class="btn btn-outline-dark" (click)="filterByLiquor('Otros')">Otros</button>
 </div>  
 
-  <div class="card" *ngFor="let bottle of bottles" (click)="openModal(bottle)">
-    <div class="card-body">
+  <div class="card glass sombra" *ngFor="let bottle of bottles">
+    <div class="card-body" (click)="openModal(bottle)">
       <div class="row">
         <div class="col-md-7">
           <p class="botellatxt">{{bottle.Name}}</p>
@@ -21,6 +21,8 @@
         </div>
       </div>
     </div>
+        <button class="edit glass sombra" (click)="edit()"><i class="pi pi-pencil"></i></button>
+
   </div>
 
   

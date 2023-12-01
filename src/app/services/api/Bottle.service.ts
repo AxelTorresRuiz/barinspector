@@ -5,7 +5,6 @@ import { barBottleGet } from "./BarBottle.service";
 
 var URLCompleta = Url + "/Bottle";
 export async function bottleGet(parametros: string = "") {
-    parametros = "?filter=DeleteAt eq null" + parametros;
     let bottle = {};
     await fetch(URLCompleta + parametros)
         .then(response => response.json())

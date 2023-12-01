@@ -3,9 +3,8 @@ import { BarBottle } from "src/app/services/api/BarBottle.model"
 import { Url } from "./const.api";
 
 var URLCompleta = Url + "/BarBottle";
-export async function barBottleGet(parametros: string="") {
-    parametros = "?$filter=DeleteAt eq null" + parametros; 
-    let barBottle={};
+export async function barBottleGet(parametros: string = "") {
+    let barBottle = {};
     await fetch(URLCompleta + parametros)
         .then(response => response.json())
         .then(data => {
@@ -20,7 +19,7 @@ export async function barBottleGet(parametros: string="") {
     return barBottle;
 }
 
-export async function barBottlePost(barBottle:BarBottle, params:string="") {
+export async function barBottlePost(barBottle: BarBottle, params: string = "") {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -28,21 +27,21 @@ export async function barBottlePost(barBottle:BarBottle, params:string="") {
         method: 'POST',
         headers: myHeaders,
         body: JSON.stringify(barBottle)
-      };
+    };
 
     console.info(JSON.stringify(barBottle))
 
-    await fetch(URLCompleta+params, requestOptions)
-    .then(response => response.json())
-    .then(data => {
-        console.info(barBottle);
-    })
-    .catch( error => {
-        console.error("Error: ", error);
-    });
+    await fetch(URLCompleta + params, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            console.info(barBottle);
+        })
+        .catch(error => {
+            console.error("Error: ", error);
+        });
 }
 
-export async function barBottlePut(barBottle:BarBottle, params:string="") {
+export async function barBottlePut(barBottle: BarBottle, params: string = "") {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -50,16 +49,16 @@ export async function barBottlePut(barBottle:BarBottle, params:string="") {
         method: 'PUT',
         headers: myHeaders,
         body: JSON.stringify(barBottle)
-      };
+    };
 
     console.info(JSON.stringify(barBottle))
 
-    await fetch(URLCompleta+params, requestOptions)
-    .then(response => response.json())
-    .then(data => {
-        console.info(barBottle);
-    })
-    .catch( error => {
-        console.error("Error: ", error);
-    });
+    await fetch(URLCompleta + params, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            console.info(barBottle);
+        })
+        .catch(error => {
+            console.error("Error: ", error);
+        });
 }

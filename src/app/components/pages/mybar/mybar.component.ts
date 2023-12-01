@@ -24,9 +24,9 @@ export class MybarComponent implements OnInit {
   async obtenerDatosIniciales() {
     var barraActiva = await obtenerBarraActiva();
     
-    var barBottles: BarBottle[] = await barBottleGet(" and BarId eq "+barraActiva.Id) as BarBottle[];
+    var barBottles: BarBottle[] = await barBottleGet("?$filter=BarId eq "+barraActiva.Id) as BarBottle[];
     for (var i = 0; i < barBottles.length; i++) {
-      var bottle: Bottle = (await bottleGet(" and Id eq " + barBottles[i].BottleId) as Bottle[])[0];
+      var bottle: Bottle = (await bottleGet("?$filter=Id eq " + barBottles[i].BottleId) as Bottle[])[0];
       this.barBottlesYBotella.push({ barBottle: barBottles[i], bottle:bottle})
     }
     console.log(this.barBottlesYBotella)

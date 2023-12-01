@@ -9,9 +9,9 @@
   <button class="btn">Otros</button>
   <button class="btnAudit" (click)="openDialog()">Iniciar Auditoria</button>
 </div>
-<div class="card">
-  <p-table class="custom-table" [value]="barAudits">
-    <ng-template pTemplate="header">
+<div class="">
+  <table class="card-table">
+    <thead>
       <tr>
         <th>Producto</th>
         <th>Peso Actual</th>
@@ -20,16 +20,16 @@
         <th>Fecha ult Actualizacion</th>
         <th>Oz consumidas</th>
       </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-barAudit let-i="index">
-      <tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let barAudit of barAudits; let i = index" [class.impar-fondo]="i % 2 !== 0" [class.par-fondo]="i % 2 === 0">
         <td>{{barAudit?.BarBottle?.Bottle?.Name}}</td>
         <td>{{barAudit?.ActualWeight}}</td>
-        <td>{{convertirAOz((barAudit?.ActualWeight-barAudit?.BarBottle?.Bottle?.EmptyBottleWeight)/barAudit?.BarBottle?.Bottle?.DensityInLiters)}}</td>
+        <td>{{convertirAOz(((barAudit?.ActualWeight-barAudit?.BarBottle?.Bottle?.EmptyBottleWeight*barAudit?.BarBottle?.NumOfBottles)*barAudit?.BarBottle?.Bottle?.DensityInLiters))}}</td>
         <td>{{barAudit?.BarBottle?.NumOfBottles}}</td>
         <td>{{ barAudit?.UpdatedAt | date:'yyyy-MM-dd HH:mm' }}</td>
-        <td>{{convertirAOz((barAudit.LastWeight - (barAudit.ActualWeight > barAudit?.BarBottle?.Bottle?.EmptyBottleWeight ? barAudit.ActualWeight : barAudit?.BarBottle?.Bottle?.EmptyBottleWeight))/barAudit.BarBottle?.Bottle?.DensityInLiters)}}</td>
+        <td>{{convertirAOz((barAudit.LastWeight - (barAudit.ActualWeight > barAudit?.BarBottle?.Bottle?.EmptyBottleWeight ? barAudit.ActualWeight : barAudit?.BarBottle?.Bottle?.EmptyBottleWeight))*barAudit.BarBottle?.Bottle?.DensityInLiters)}}</td>
       </tr>
-    </ng-template>
-  </p-table>
+    </tbody>
+  </table>
 </div>
